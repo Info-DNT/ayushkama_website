@@ -597,3 +597,465 @@ a.btn-link.text-light:after {
 	}
 }
 /* ============ mobile view .end// ============ */
+
+/* ============================================ */
+/* OUR PRODUCT CATALOGUE SECTION               */
+/* ============================================ */
+
+/* Section background: warm cream to stay on-brand */
+.catalogue-section {
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+/* ---- Filter Pill Buttons ---- */
+.catalogue-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1.5px solid #d4e8c7;
+  background: #fff;
+  color: #444;
+  font-family: var(--bs-body-font-family);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  line-height: 1.4;
+}
+.catalogue-filter-btn:hover {
+  background: var(--bs-primary);
+  color: #fff;
+  border-color: var(--bs-primary);
+}
+.catalogue-filter-btn.active {
+  background: var(--bs-secondary);
+  color: #fff;
+  border-color: var(--bs-secondary);
+  box-shadow: 0 4px 14px rgba(54, 65, 39, 0.25);
+}
+.catalogue-filter-btn svg {
+  flex-shrink: 0;
+}
+
+/* ---- Catalogue Product Card ---- */
+.catalogue-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.catalogue-card:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  transform: translate3d(0, -6px, 0);
+}
+
+/* ---- Card Image Wrapper (for overlay & badges) ---- */
+.card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.catalogue-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.catalogue-card:hover .catalogue-img {
+  transform: scale(1.04);
+}
+
+/* ---- Badges (Bestseller / Export Ready / New) ---- */
+.badge-label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  z-index: 2;
+  line-height: 1.4;
+}
+.badge-label.bestseller {
+  background: #f7a422;
+  color: #fff;
+}
+.badge-label.export {
+  background: var(--bs-secondary);
+  color: #fff;
+}
+.badge-label.new-item {
+  background: var(--bs-primary);
+  color: #fff;
+}
+
+/* ---- Quick View Hover Overlay ---- */
+.quick-view-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+.catalogue-card:hover .quick-view-overlay {
+  opacity: 1;
+}
+
+/* ---- Card Body Content ---- */
+.catalogue-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Product tagline in brand orange */
+.product-tagline {
+  color: var(--bs-danger);
+  font-size: 0.83rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Origin / MOQ meta info */
+.product-meta {
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.8;
+  margin-top: auto;
+}
+.product-meta a {
+  color: var(--bs-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.product-meta a:hover {
+  text-decoration: underline;
+}
+
+/* Hide filtered-out items */
+.catalogue-item.hidden {
+  display: none;
+}
+
+/* ============================================ */
+/* ROOTED IN INDIA / ORIGIN STORY SECTION      */
+/* ============================================ */
+
+.origin-section {
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+/* Stats numbers */
+.origin-stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--bs-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.origin-stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-bottom: 0;
+}
+
+/* Right-column image wrapper */
+.origin-img-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+.origin-img-wrapper img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Key Sourcing Regions overlay card */
+.sourcing-card {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+.sourcing-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--bs-secondary);
+  margin-bottom: 14px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+.sourcing-dot {
+  color: var(--bs-primary);
+  font-size: 0.7rem;
+  margin-right: 4px;
+}
+.sourcing-region {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: #333;
+}
+.sourcing-product {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 0;
+  padding-left: 16px;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+  .origin-img-wrapper img {
+    height: 280px;
+  }
+  .sourcing-card {
+    position: static;
+    border-radius: 0 0 12px 12px;
+    box-shadow: none;
+    border-top: 1px solid #eee;
+  }
+  .origin-img-wrapper {
+    border-radius: 12px;
+  }
+}
+
+
+/* ============================================ */
+/* SECTION 1: WHY CHOOSE AYUSHKAMA             */
+/* ============================================ */
+
+.why-choose-section {
+  background: var(--bs-secondary);
+}
+
+.why-section-subtitle {
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 1.05rem;
+  margin-top: 8px;
+}
+
+.why-icon-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #f7a422;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.why-card-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.why-card-text {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+
+/* ============================================ */
+/* SECTION 2: GLOBAL STANDARDS. LOCAL SOUL.    */
+/* ============================================ */
+
+.global-section {
+  background: var(--bs-primary-bg-subtle);
+}
+
+.export-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 24px;
+  height: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.export-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.10);
+}
+
+.export-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--bs-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.export-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--bs-secondary);
+  margin-bottom: 8px;
+}
+
+.export-card-text {
+  font-size: 0.83rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Destinations Card */
+.destinations-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 36px 40px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.07);
+}
+
+.destinations-list {
+  margin-bottom: 0;
+}
+.destinations-list li {
+  font-size: 0.9rem;
+  color: #444;
+  padding: 4px 0;
+  line-height: 1.6;
+}
+
+.country-dot {
+  color: var(--bs-danger);
+  font-size: 0.65rem;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Download button */
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  background: var(--bs-secondary);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+.btn-download:hover {
+  background: #2a3320;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* World map wrapper */
+.world-map-wrapper {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 260px;
+}
+.world-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.45) saturate(0.6);
+}
+.world-map-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+
+/* ============================================ */
+/* SECTION 3: TRUSTED BY GLOBAL IMPORTERS      */
+/* ============================================ */
+
+.testimonials-section {
+  background: var(--bs-primary-bg-subtle);
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px;
+  height: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: #f7a422;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.testimonial-quote-icon {
+  font-size: 3rem;
+  color: #f7a422;
+  line-height: 0.8;
+  font-family: Georgia, serif;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.testimonial-role {
+  font-size: 0.78rem;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+/* Certification badges */
+.cert-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 24px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  min-width: 130px;
+  transition: transform 0.25s ease;
+}
+.cert-card:hover {
+  transform: translateY(-3px);
+}
+
+.cert-img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.cert-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--bs-secondary);
+  margin-top: 10px;
+  margin-bottom: 0;
+}
