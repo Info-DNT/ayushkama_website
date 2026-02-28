@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Organic - Grocery Store HTML Website Template</title>
+  <title>Ayushkama - Organic Superfoods</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -535,21 +535,21 @@
       <div class="row py-3 border-bottom">
 
         <div
-          class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
+          class="col-sm-4 col-lg-3 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
           <div class="d-flex align-items-center my-3 my-sm-0">
-            <a href="index.html">
-              <img src="images/logo.svg" alt="logo" class="img-fluid">
+            <a href="index.html" class="site-logo">
+              <img src="images/ayushkama-logo.jpg" alt="logo" class="img-fluid">
             </a>
           </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar">
+          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <svg width="24" height="24" viewBox="0 0 24 24">
               <use xlink:href="#menu"></use>
             </svg>
           </button>
         </div>
 
-        <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-4">
+        <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-3">
           <div class="search-bar row bg-light p-2 rounded-4">
             <div class="col-md-4 d-none d-md-block">
               <select class="form-select border-0 bg-transparent">
@@ -588,17 +588,10 @@
                 aria-expanded="false">Pages</a>
               <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
                 <li><a href="about.html" class="dropdown-item">About Us </a></li>
-                <li><a href="index.html" class="dropdown-item">Shop </a></li>
-                <li><a href="single-product.html" class="dropdown-item">Single Product </a></li>
-                <li><a href="index.html" class="dropdown-item">Cart </a></li>
-                <li><a href="index.html" class="dropdown-item">Checkout </a></li>
+                <li><a href="cart.html" class="dropdown-item">Cart </a></li>
                 <li><a href="index.html" class="dropdown-item">Blog </a></li>
-                <li><a href="index.html" class="dropdown-item">Single Post </a></li>
-                <li><a href="index.html" class="dropdown-item">Styles </a></li>
                 <li><a href="contact.html" class="dropdown-item">Contact </a></li>
-                <li><a href="index.html" class="dropdown-item">Thank You </a></li>
                 <li><a href="index.html" class="dropdown-item">My Account </a></li>
-                <li><a href="index.html" class="dropdown-item">404 Error </a></li>
               </ul>
             </li>
           </ul>
@@ -621,11 +614,13 @@
               </a>
             </li>
             <li>
-              <a href="#" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
-                aria-controls="offcanvasCart">
+              <a href="cart.html" class="p-2 mx-1 position-relative" id="cart-icon-link">
                 <svg width="24" height="24">
                   <use xlink:href="#shopping-bag"></use>
                 </svg>
+                <span id="cart-count"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  style="font-size:0.65rem; display:none;">0</span>
               </a>
             </li>
           </ul>
@@ -854,45 +849,52 @@
           <div class="category-carousel swiper">
             <div class="swiper-wrapper">
 
-              <!-- Immunity & Vitality: Moringa (product-thumb-4) -->
-              <a href="#product-catalogue" class="nav-link swiper-slide text-center">
-                <img src="images/product-thumb-4.png" class="rounded-circle" alt="Immunity &amp; Vitality">
+              <!-- Immunity & Vitality: Lakadong Turmeric -->
+              <a href="#product-catalogue" class="nav-link swiper-slide text-center category-item"
+                data-category-filter="immunity">
+                <img src="images/Lakadong-Haldi.jpg" class="rounded-circle" alt="Immunity &amp; Vitality">
                 <h4 class="fs-6 mt-3 fw-normal category-title">Immunity &amp; Vitality</h4>
               </a>
 
-              <!-- Functional Flours: Sattu (product-thumb-2) -->
-              <a href="#product-catalogue" class="nav-link swiper-slide text-center">
-                <img src="images/product-thumb-2.png" class="rounded-circle" alt="Functional Flours">
+              <!-- Functional Flours: Raw Banana Powder -->
+              <a href="#product-catalogue" class="nav-link swiper-slide text-center category-item"
+                data-category-filter="flours">
+                <img src="images/Raw-Banana-Powder.jpg" class="rounded-circle" alt="Functional Flours">
                 <h4 class="fs-6 mt-3 fw-normal category-title">Functional Flours</h4>
               </a>
 
-              <!-- Seeds & Healthy Fats: Sesame (product-thumb-7) -->
-              <a href="#product-catalogue" class="nav-link swiper-slide text-center">
-                <img src="images/product-thumb-7.png" class="rounded-circle" alt="Seeds &amp; Healthy Fats">
+              <!-- Seeds & Healthy Fats: Sesame Seeds -->
+              <a href="#product-catalogue" class="nav-link swiper-slide text-center category-item"
+                data-category-filter="seeds">
+                <img src="images/Sesame-Seeds.jpg" class="rounded-circle" alt="Seeds &amp; Healthy Fats">
                 <h4 class="fs-6 mt-3 fw-normal category-title">Seeds &amp; Healthy Fats</h4>
               </a>
 
-              <!-- Wellness Snacks: Roasted Chana (product-thumb-6) -->
-              <a href="#product-catalogue" class="nav-link swiper-slide text-center">
-                <img src="images/product-thumb-6.png" class="rounded-circle" alt="Wellness Snacks">
+              <!-- Wellness Snacks: Phool Makhana -->
+              <a href="#product-catalogue" class="nav-link swiper-slide text-center category-item"
+                data-category-filter="snacks">
+                <img src="images/Phool-Makhana.jpg" class="rounded-circle" alt="Wellness Snacks">
                 <h4 class="fs-6 mt-3 fw-normal category-title">Wellness Snacks</h4>
               </a>
 
-              <!-- Natural Sweeteners: Raw Forest Honey (product-thumb-9) -->
-              <a href="#product-catalogue" class="nav-link swiper-slide text-center">
-                <img src="images/product-thumb-9.png" class="rounded-circle" alt="Natural Sweeteners">
+              <!-- Natural Sweeteners: Jaggery Powder -->
+              <a href="#product-catalogue" class="nav-link swiper-slide text-center category-item"
+                data-category-filter="sweeteners">
+                <img src="images/Jaggery-Powder.jpg" class="rounded-circle" alt="Natural Sweeteners">
                 <h4 class="fs-6 mt-3 fw-normal category-title">Natural Sweeteners</h4>
               </a>
 
-              <!-- Organic Inputs: Turmeric (product-thumb-1) -->
-              <a href="#product-catalogue" class="nav-link swiper-slide text-center">
-                <img src="images/product-thumb-1.png" class="rounded-circle" alt="Organic Inputs">
+              <!-- Organic Inputs: Amla Powder -->
+              <a href="#product-catalogue" class="nav-link swiper-slide text-center category-item"
+                data-category-filter="inputs">
+                <img src="images/Amla-Powder.jpg" class="rounded-circle" alt="Organic Inputs">
                 <h4 class="fs-6 mt-3 fw-normal category-title">Organic Inputs</h4>
               </a>
 
-              <!-- All Products: Ashwagandha (product-thumb-3) -->
-              <a href="#product-catalogue" class="nav-link swiper-slide text-center">
-                <img src="images/product-thumb-3.png" class="rounded-circle" alt="All Products">
+              <!-- All Products: Stevia Leaves -->
+              <a href="#product-catalogue" class="nav-link swiper-slide text-center category-item"
+                data-category-filter="all">
+                <img src="images/Stevia-Leaves.jpg" class="rounded-circle" alt="All Products">
                 <h4 class="fs-6 mt-3 fw-normal category-title">All Products</h4>
               </a>
 
@@ -969,19 +971,26 @@
         <div class="col catalogue-item" data-category="immunity">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-4.png" alt="Moringa Leaf Powder" class="catalogue-img">
+              <img src="images/Moringa-Leaf-Powder.jpg" alt="Moringa Leaf Powder" class="catalogue-img">
               <span class="badge-label bestseller">⭐ Bestseller</span>
               <span class="badge-label export" style="top:46px;">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=moringa-leaf-powder" class="btn btn-primary rounded-pill px-4">Quick
+                  View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
               <h3 class="fs-6 fw-bold mb-0 mt-3">Moringa Leaf Powder</h3>
-              <p class="product-tagline mb-2">The Miracle Tree</p>
+              <p class="product-tagline mb-2">Rich in Antioxidants & Plant Protein</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Tamil Nadu</a></span><br>
-                <span>⊕ MOQ: 500 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="moringa-leaf-powder"
+                  data-name="Moringa Leaf Powder" data-image="images/Moringa-Leaf-Powder.jpg"
+                  data-moq="Custom Quantity">+ Add to
+                  Cart</button>
               </div>
             </div>
           </div>
@@ -991,40 +1000,54 @@
         <div class="col catalogue-item" data-category="immunity">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-1.png" alt="Lakadong Turmeric" class="catalogue-img">
+              <img src="images/Lakadong-Haldi.jpg" alt="Lakadong Turmeric" class="catalogue-img">
               <span class="badge-label bestseller">⭐ Bestseller</span>
               <span class="badge-label export" style="top:46px;">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=lakadong-turmeric" class="btn btn-primary rounded-pill px-4">Quick
+                  View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
               <h3 class="fs-6 fw-bold mb-0 mt-3">Lakadong Turmeric</h3>
-              <p class="product-tagline mb-2">Golden Healing from Meghalaya</p>
+              <p class="product-tagline mb-2">Ancient Immunity Booster</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Meghalaya</a></span><br>
-                <span>⊕ MOQ: 1000 kg</span>
+                <span>⊙ Origin: <a href="#">India</a></span><br>
+                <span>⊕ MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="lakadong-turmeric"
+                  data-name="Lakadong Turmeric" data-image="images/Lakadong-Haldi.jpg" data-moq="Custom Quantity">+ Add
+                  to
+                  Cart</button>
               </div>
             </div>
           </div>
         </div>
 
         <!-- 3. Raw Forest Honey -->
-        <div class="col catalogue-item" data-category="sweeteners">
+        <div class="col catalogue-item" data-category="immunity">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-9.png" alt="Raw Forest Honey" class="catalogue-img">
+              <img src="images/Raw-Forest-Honey.jpg" alt="Raw Forest Honey" class="catalogue-img">
               <span class="badge-label export">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=raw-forest-honey" class="btn btn-primary rounded-pill px-4">Quick
+                  View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
               <h3 class="fs-6 fw-bold mb-0 mt-3">Raw Forest Honey</h3>
-              <p class="product-tagline mb-2">Pure Wildflower Nectar</p>
+              <p class="product-tagline mb-2">Unporessed & Wild Harvested</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Himalayan Forests</a></span><br>
-                <span>⊕ MOQ: 250 kg</span>
+                <span>⊙ Origin: <a href="#">India</a></span><br>
+                <span>⊕ MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="raw-forest-honey"
+                  data-name="Raw Forest Honey" data-image="images/Raw-Forest-Honey.jpg" data-moq="Custom Quantity">+ Add
+                  to
+                  Cart</button>
               </div>
             </div>
           </div>
@@ -1034,18 +1057,25 @@
         <div class="col catalogue-item" data-category="flours">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-5.png" alt="Raw Banana Powder" class="catalogue-img">
+              <img src="images/Raw-Banana-Powder.jpg" alt="Raw Banana Powder" class="catalogue-img">
               <span class="badge-label export">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=raw-banana-powder" class="btn btn-primary rounded-pill px-4">Quick
+                  View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
               <h3 class="fs-6 fw-bold mb-0 mt-3">Raw Banana Powder</h3>
-              <p class="product-tagline mb-2">Gut Health &amp; Baby Care</p>
+              <p class="product-tagline mb-2">Gut Friendly &amp; Baby Nutrition</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Kerala</a></span><br>
-                <span>⊕ MOQ: 300 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="raw-banana-powder"
+                  data-name="Raw Banana Powder" data-image="images/Raw-Banana-Powder.jpg" data-moq="Custom Quantity">+
+                  Add to
+                  Cart</button>
               </div>
             </div>
           </div>
@@ -1055,18 +1085,25 @@
         <div class="col catalogue-item" data-category="flours">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-2.png" alt="Sattu Roasted Gram Flour" class="catalogue-img">
+              <img src="images/Sattu-Roasted-Gram-Flour.jpg" alt="Sattu Roasted Gram Flour" class="catalogue-img">
               <span class="badge-label bestseller">⭐ Bestseller</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=sattu-roasted-gram-flour"
+                  class="btn btn-primary rounded-pill px-4">Quick View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
               <h3 class="fs-6 fw-bold mb-0 mt-3">Sattu (Roasted Gram Flour)</h3>
-              <p class="product-tagline mb-2">The Indian Protein Coolant</p>
+              <p class="product-tagline mb-2">The Indian Protein</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Bihar</a></span><br>
-                <span>⊕ MOQ: 500 kg</span>
+                <span>⊙ Origin: <a href="#">India</a></span><br>
+                <span>⊕ MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="sattu-roasted-gram-flour"
+                  data-name="Sattu (Roasted Gram Flour)" data-image="images/Sattu-Roasted-Gram-Flour.jpg"
+                  data-moq="Custom Quantity">+ Add
+                  to Cart</button>
               </div>
             </div>
           </div>
@@ -1076,18 +1113,25 @@
         <div class="col catalogue-item" data-category="flours">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-3.png" alt="Ragi Flour" class="catalogue-img">
+              <img src="images/Ragi-Finger-Millet-Flour.jpg" alt="Ragi Flour" class="catalogue-img">
               <span class="badge-label export">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=ragi-finger-millet-flour"
+                  class="btn btn-primary rounded-pill px-4">Quick View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
               <h3 class="fs-6 fw-bold mb-0 mt-3">Ragi (Finger Millet) Flour</h3>
-              <p class="product-tagline mb-2">Calcium-Rich Ancient Grain</p>
+              <p class="product-tagline mb-2">High Calcium Superfood</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Karnataka</a></span><br>
-                <span>⊕ MOQ: 500 kg</span>
+                <span>⊙ Origin: <a href="#">India</a></span><br>
+                <span>⊕ MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="ragi-finger-millet-flour"
+                  data-name="Ragi (Finger Millet) Flour" data-image="images/Ragi-Finger-Millet-Flour.jpg"
+                  data-moq="Custom Quantity">+ Add
+                  to Cart</button>
               </div>
             </div>
           </div>
@@ -1097,18 +1141,23 @@
         <div class="col catalogue-item" data-category="seeds">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-6.png" alt="Sesame Seeds" class="catalogue-img">
+              <img src="images/Sesame-Seeds.jpg" alt="Sesame Seeds" class="catalogue-img">
               <span class="badge-label export">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=sesame-seeds" class="btn btn-primary rounded-pill px-4">Quick View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
-              <h3 class="fs-6 fw-bold mb-0 mt-3">Sesame Seeds (Black &amp; White)</h3>
-              <p class="product-tagline mb-2">Ancient Oil Seeds</p>
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Sesame Oil (Black &amp; White)</h3>
+              <p class="product-tagline mb-2">Cold Pressed & Unrefined</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Rajasthan</a></span><br>
-                <span>⊕ MOQ: 1000 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="sesame-seeds"
+                  data-name="Sesame Seeds (Black &amp; White)" data-image="images/Sesame-Seeds.jpg"
+                  data-moq="Custom Quantity">+ Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1118,18 +1167,25 @@
         <div class="col catalogue-item" data-category="seeds">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-7.png" alt="Sabja Seeds" class="catalogue-img">
+              <img src="images/Sabja-Seeds.jpg" alt="Sabja Seeds" class="catalogue-img">
               <span class="badge-label export">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=sabja-basil-seeds" class="btn btn-primary rounded-pill px-4">Quick
+                  View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
               <h3 class="fs-6 fw-bold mb-0 mt-3">Sabja (Basil) Seeds</h3>
-              <p class="product-tagline mb-2">The Indian Chia</p>
+              <p class="product-tagline mb-2">Cooling & Digestive Superfood</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Tamil Nadu</a></span><br>
-                <span>⊕ MOQ: 500 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="sabja-basil-seeds"
+                  data-name="Sabja (Basil) Seeds" data-image="images/Sabja-Seeds.jpg" data-moq="Custom Quantity">+ Add
+                  to
+                  Cart</button>
               </div>
             </div>
           </div>
@@ -1139,208 +1195,345 @@
         <div class="col catalogue-item" data-category="seeds">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-8.png" alt="Flaxseeds" class="catalogue-img">
+              <img src="images/Flaxseeds.jpg" alt="Flaxseeds" class="catalogue-img">
               <span class="badge-label export">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=flaxseeds-alsi" class="btn btn-primary rounded-pill px-4">Quick View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
               <h3 class="fs-6 fw-bold mb-0 mt-3">Flaxseeds (Alsi)</h3>
-              <p class="product-tagline mb-2">Omega-3 Rich</p>
+              <p class="product-tagline mb-2">Rich in Omega-3</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Madhya Pradesh</a></span><br>
-                <span>⊕ MOQ: 500 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="flaxseeds-alsi"
+                  data-name="Flaxseeds (Alsi)" data-image="images/Flaxseeds.jpg" data-moq="Custom Quantity">+ Add to
+                  Cart</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 10. Vermicompost -->
-        <div class="col catalogue-item" data-category="inputs">
+        <!-- 10. Pumpkin Seeds  -->
+        <div class="col catalogue-item" data-category="seeds">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-10.png" alt="Vermicompost" class="catalogue-img">
+              <img src="images/Pumpkin-Seeds.jpg" alt="Pumpkin Seeds" class="catalogue-img">
               <span class="badge-label new-item">✦ New</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=pumpkin-seeds" class="btn btn-primary rounded-pill px-4">Quick View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
-              <h3 class="fs-6 fw-bold mb-0 mt-3">Vermicompost</h3>
-              <p class="product-tagline mb-2">Black Gold for Organic Farming</p>
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Pumpkin Seeds </h3>
+              <p class="product-tagline mb-2">Zinc & Magnesium Rich</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Maharashtra</a></span><br>
-                <span>⊕ MOQ: 2000 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="pumpkin-seeds"
+                  data-name="Pumpkin Seeds" data-image="images/Pumpkin-Seeds.jpg" data-moq="Custom Quantity">+ Add to
+                  Cart</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 11. Onion Powder -->
-        <div class="col catalogue-item" data-category="inputs">
-          <div class="catalogue-card h-100">
-            <div class="card-img-wrapper">
-              <img src="images/product-thumb-11.png" alt="Onion Powder" class="catalogue-img">
-              <span class="badge-label export">⊕ Export Ready</span>
-              <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
-              </div>
-            </div>
-            <div class="card-body px-3 pb-3">
-              <h3 class="fs-6 fw-bold mb-0 mt-3">Onion Powder</h3>
-              <p class="product-tagline mb-2">Culinary Essential</p>
-              <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Maharashtra</a></span><br>
-                <span>⊕ MOQ: 500 kg</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 12. Ginger Powder -->
-        <div class="col catalogue-item" data-category="inputs">
-          <div class="catalogue-card h-100">
-            <div class="card-img-wrapper">
-              <img src="images/product-thumb-12.png" alt="Ginger Powder" class="catalogue-img">
-              <span class="badge-label export">⊕ Export Ready</span>
-              <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
-              </div>
-            </div>
-            <div class="card-body px-3 pb-3">
-              <h3 class="fs-6 fw-bold mb-0 mt-3">Ginger Powder</h3>
-              <p class="product-tagline mb-2">Digestive Fire</p>
-              <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Kerala</a></span><br>
-                <span>⊕ MOQ: 300 kg</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 13. Amla Powder -->
+        <!-- 11. Amla Powder -->
         <div class="col catalogue-item" data-category="immunity">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-13.png" alt="Amla Powder" class="catalogue-img">
+              <img src="images/Amla-Powder.jpg" alt="Amla Powder" class="catalogue-img">
               <span class="badge-label export">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=amla-powder" class="btn btn-primary rounded-pill px-4">Quick View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
               <h3 class="fs-6 fw-bold mb-0 mt-3">Amla Powder</h3>
-              <p class="product-tagline mb-2">Vitamin C Powerhouse</p>
+              <p class="product-tagline mb-2">Highest Natural Vitamin C</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Uttar Pradesh</a></span><br>
-                <span>⊕ MOQ: 500 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="amla-powder"
+                  data-name="Amla Powder" data-image="images/Amla-Powder.jpg" data-moq="Custom Quantity">+ Add to
+                  Cart</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 14. Ashwagandha Root Powder -->
+        <!-- 12.	Ashwagandha  Powder -->
         <div class="col catalogue-item" data-category="immunity">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-14.png" alt="Ashwagandha Root Powder" class="catalogue-img">
+              <img src="images/Ashwagandha-Powder.jpg" alt="Ashwagandha  Powder" class="catalogue-img">
+              <span class="badge-label export">⊕ Export Ready</span>
+              <div class="quick-view-overlay">
+                <a href="single-product.html?id=ashwagandha-powder" class="btn btn-primary rounded-pill px-4">Quick
+                  View</a>
+              </div>
+            </div>
+            <div class="card-body px-3 pb-3">
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Ashwagandha Powder</h3>
+              <p class="product-tagline mb-2">Adaptogen for Stress & Energy</p>
+              <div class="product-meta">
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="ashwagandha-powder"
+                  data-name="Ashwagandha Powder" data-image="images/Ashwagandha-Powder.jpg" data-moq="Custom Quantity">+
+                  Add to
+                  Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. Wheatgrass Powder -->
+        <div class="col catalogue-item" data-category="immunity">
+          <div class="catalogue-card h-100">
+            <div class="card-img-wrapper">
+              <img src="images/Wheatgrass-Powder.jpg" alt="Wheatgrass Powder" class="catalogue-img">
+              <span class="badge-label export">⊕ Export Ready</span>
+              <div class="quick-view-overlay">
+                <a href="single-product.html?id=wheatgrass-powder" class="btn btn-primary rounded-pill px-4">Quick
+                  View</a>
+              </div>
+            </div>
+            <div class="card-body px-3 pb-3">
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Wheatgrass Powder</h3>
+              <p class="product-tagline mb-2">Pure Detox & Daily Greens</p>
+              <div class="product-meta">
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="wheatgrass-powder"
+                  data-name="Wheatgrass Powder" data-image="images/Wheatgrass-Powder.jpg" data-moq="Custom Quantity">+
+                  Add to
+                  Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14. Amaranth Flour -->
+        <div class="col catalogue-item" data-category="flours">
+          <div class="catalogue-card h-100">
+            <div class="card-img-wrapper">
+              <img src="images/Amaranth-Flour.jpg" alt="Amaranth Flour" class="catalogue-img">
               <span class="badge-label bestseller">⭐ Bestseller</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=amaranth-flour" class="btn btn-primary rounded-pill px-4">Quick View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
-              <h3 class="fs-6 fw-bold mb-0 mt-3">Ashwagandha Root Powder</h3>
-              <p class="product-tagline mb-2">Ancient Adaptogen</p>
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Amaranth Flour</h3>
+              <p class="product-tagline mb-2">Gluten-Free</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Rajasthan</a></span><br>
-                <span>⊕ MOQ: 250 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="amaranth-flour"
+                  data-name="Amaranth Flour" data-image="images/Amaranth-Flour.jpg" data-moq="Custom Quantity">+ Add to
+                  Cart</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 15. Tulsi Leaf Powder -->
-        <div class="col catalogue-item" data-category="immunity">
+        <!-- 15. Wood-Pressed Sesame Oil -->
+        <div class="col catalogue-item" data-category="flours">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-15.png" alt="Tulsi Leaf Powder" class="catalogue-img">
+              <img src="images/Wood-Pressed-Sesame-Oil.jpg" alt="Wood-Pressed Sesame Oil" class="catalogue-img">
               <span class="badge-label export">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=wood-pressed-sesame-oil" class="btn btn-primary rounded-pill px-4">Quick
+                  View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
-              <h3 class="fs-6 fw-bold mb-0 mt-3">Tulsi Leaf Powder</h3>
-              <p class="product-tagline mb-2">The Holy Herb</p>
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Wood-Pressed Sesame Oil</h3>
+              <p class="product-tagline mb-2">Cold Pressed & Unrefined</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Uttarakhand</a></span><br>
-                <span>⊕ MOQ: 200 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="wood-pressed-sesame-oil"
+                  data-name="Wood-Pressed Sesame Oil" data-image="images/Wood-Pressed-Sesame-Oil.jpg"
+                  data-moq="Custom Quantity">+ Add to Cart</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 16. Kokum -->
+        <!-- 16. Phool Makhana -->
         <div class="col catalogue-item" data-category="snacks">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-16.png" alt="Kokum" class="catalogue-img">
+              <img src="images/Phool-Makhana.jpg" alt="Phool Makhana" class="catalogue-img">
               <span class="badge-label export">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=phool-makhana" class="btn btn-primary rounded-pill px-4">Quick View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
-              <h3 class="fs-6 fw-bold mb-0 mt-3">Kokum (Garcinia)</h3>
-              <p class="product-tagline mb-2">Coastal Superfruit</p>
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Phool Makhana</h3>
+              <p class="product-tagline mb-2">Raw & Roasted with Olive Oil/</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Goa &amp; Konkan</a></span><br>
-                <span>⊕ MOQ: 200 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="phool-makhana"
+                  data-name="Phool Makhana" data-image="images/Phool-Makhana.jpg" data-moq="Custom Quantity">+ Add to
+                  Cart</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 17. Tamarind Concentrate -->
+        <!-- 17. Roasted Chana -->
         <div class="col catalogue-item" data-category="snacks">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-17.png" alt="Tamarind Concentrate" class="catalogue-img">
+              <img src="images/Roasted-Chana.jpg" alt="Roasted Chana" class="catalogue-img">
               <span class="badge-label export">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=roasted-chana" class="btn btn-primary rounded-pill px-4">Quick View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
-              <h3 class="fs-6 fw-bold mb-0 mt-3">Tamarind Concentrate</h3>
-              <p class="product-tagline mb-2">Tangy South Indian Staple</p>
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Roasted Chana</h3>
+              <p class="product-tagline mb-2">Ancient Organic & Sustainable Living</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Andhra Pradesh</a></span><br>
-                <span>⊕ MOQ: 300 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="roasted-chana"
+                  data-name="Roasted Chana" data-image="images/Roasted-Chana.jpg" data-moq="Custom Quantity">+ Add to
+                  Cart</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 18. Spirulina Powder -->
+        <!-- 18. Millet Puffs -->
         <div class="col catalogue-item" data-category="snacks">
           <div class="catalogue-card h-100">
             <div class="card-img-wrapper">
-              <img src="images/product-thumb-18.png" alt="Spirulina Powder" class="catalogue-img">
+              <img src="images/Millet-Puffs.jpg" alt="Millet Puffs" class="catalogue-img">
               <span class="badge-label bestseller">⭐ Bestseller</span>
               <span class="badge-label export" style="top:46px;">⊕ Export Ready</span>
               <div class="quick-view-overlay">
-                <a href="single-product.html" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                <a href="single-product.html?id=millet-puffs" class="btn btn-primary rounded-pill px-4">Quick View</a>
               </div>
             </div>
             <div class="card-body px-3 pb-3">
-              <h3 class="fs-6 fw-bold mb-0 mt-3">Spirulina Powder</h3>
-              <p class="product-tagline mb-2">Ocean's Superfood</p>
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Millet Puffs</h3>
+              <p class="product-tagline mb-2">Light, Airy & Delicious</p>
               <div class="product-meta">
-                <span>⊙ Origin: <a href="#">Tamil Nadu</a></span><br>
-                <span>⊕ MOQ: 100 kg</span>
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="millet-puffs"
+                  data-name="Millet Puffs" data-image="images/Millet-Puffs.jpg" data-moq="Custom Quantity">+ Add to
+                  Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 19. Jaggery Powder  -->
+        <div class="col catalogue-item" data-category="sweeteners">
+          <div class="catalogue-card h-100">
+            <div class="card-img-wrapper">
+              <img src="images/Jaggery-Powder.jpg" alt="Jaggery Powder" class="catalogue-img">
+              <span class="badge-label bestseller">⭐ Bestseller</span>
+              <span class="badge-label export" style="top:46px;">⊕ Export Ready</span>
+              <div class="quick-view-overlay">
+                <a href="single-product.html?id=jaggery-powder" class="btn btn-primary rounded-pill px-4">Quick View</a>
+              </div>
+            </div>
+            <div class="card-body px-3 pb-3">
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Jaggery Powder</h3>
+              <p class="product-tagline mb-2">Natural Sugar & Alternative</p>
+              <div class="product-meta">
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="jaggery-powder"
+                  data-name="Jaggery Powder" data-image="images/Jaggery-Powder.jpg" data-moq="Custom Quantity">+ Add
+                  to
+                  Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 20. Palm Jaggery  -->
+        <div class="col catalogue-item" data-category="sweeteners">
+          <div class="catalogue-card h-100">
+            <div class="card-img-wrapper">
+              <img src="images/Palm-Jaggery.jpg" alt="Palm Jaggery" class="catalogue-img">
+              <span class="badge-label bestseller">⭐ Bestseller</span>
+              <span class="badge-label export" style="top:46px;">⊕ Export Ready</span>
+              <div class="quick-view-overlay">
+                <a href="single-product.html?id=palm-jaggery" class="btn btn-primary rounded-pill px-4">Quick View</a>
+              </div>
+            </div>
+            <div class="card-body px-3 pb-3">
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Palm Jaggery</h3>
+              <p class="product-tagline mb-2">Natural Sweetener & Ayurvedic</p>
+              <div class="product-meta">
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="palm-jaggery"
+                  data-name="Palm Jaggery" data-image="images/Palm-Jaggery.jpg" data-moq="Custom Quantity">+ Add to
+                  Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 21. Stevia Leaves  -->
+        <div class="col catalogue-item" data-category="sweeteners">
+          <div class="catalogue-card h-100">
+            <div class="card-img-wrapper">
+              <img src="images/Stevia-Leaves.jpg" alt="Stevia Leaves" class="catalogue-img">
+              <span class="badge-label bestseller">⭐ Bestseller</span>
+              <span class="badge-label export" style="top:46px;">⊕ Export Ready</span>
+              <div class="quick-view-overlay">
+                <a href="single-product.html?id=stevia-leaves" class="btn btn-primary rounded-pill px-4">Quick View</a>
+              </div>
+            </div>
+            <div class="card-body px-3 pb-3">
+              <h3 class="fs-6 fw-bold mb-0 mt-3">Stevia Leaves</h3>
+              <p class="product-tagline mb-2">Zero Calorie & Natural Sweetener</p>
+              <div class="product-meta">
+                <span>&#8857; Origin: <a href="#">India</a></span><br>
+                <span>&#8853; MOQ: Custom Quantity</span>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="stevia-leaves"
+                  data-name="Stevia Leaves" data-image="images/Stevia-Leaves.jpg" data-moq="Custom Quantity">+ Add to
+                  Cart</button>
               </div>
             </div>
           </div>
@@ -1891,7 +2084,7 @@
         <div class="container">
           <div class="row justify-content-center align-items-center">
             <div class="col-md-4">
-              <h2 class="mt-5">Download Organic App</h2>
+              <h2 class="mt-5">Download Ayushkama App</h2>
               <p>Online Orders made easy, fast and reliable</p>
               <div class="d-flex gap-2 flex-wrap mb-5">
                 <a href="#" title="App store"><img src="images/img-app-store.png" alt="app-store"></a>
@@ -2010,7 +2203,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="footer-menu">
-            <img src="images/logo.svg" width="240" height="70" alt="logo">
+            <img src="images/ayushkama-logo.jpg" width="240" height="70" alt="logo">
             <div class="social-links mt-3">
               <ul class="d-flex list-unstyled gap-2">
                 <li>
@@ -2055,7 +2248,7 @@
 
         <div class="col-md-2 col-sm-6">
           <div class="footer-menu">
-            <h5 class="widget-title">Organic</h5>
+            <h5 class="widget-title">Ayushkama</h5>
             <ul class="menu-list list-unstyled">
               <li class="menu-item">
                 <a href="#" class="nav-link">About us</a>
@@ -2147,7 +2340,7 @@
     <div class="container-lg">
       <div class="row">
         <div class="col-md-6 copyright">
-          <p>© 2024 Organic. All rights reserved.</p>
+          <p>© 2024 Ayushkama. All rights reserved.</p>
         </div>
         <div class="col-md-6 credit-link text-start text-md-end">
           <p>HTML Template by <a href="https://templatesjungle.com/">TemplatesJungle</a> Distributed By <a
@@ -2163,6 +2356,7 @@
     crossorigin="anonymous"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
 
   <!-- Product Catalogue Filter JS -->
   <script>
@@ -2187,6 +2381,24 @@
               item.classList.add('hidden');
             }
           });
+        });
+      });
+
+      // Interconnect Category Scroller with Catalogue Filter
+      var scrollerItems = document.querySelectorAll('.category-item[data-category-filter]');
+      scrollerItems.forEach(function (scrollerItem) {
+        scrollerItem.addEventListener('click', function (e) {
+          e.preventDefault();
+          var filterValue = this.getAttribute('data-category-filter');
+          var targetBtn = document.querySelector('.catalogue-filter-btn[data-filter="' + filterValue + '"]');
+
+          if (targetBtn) {
+            targetBtn.click();
+            // Smooth scroll to the catalogue section
+            document.querySelector('#product-catalogue').scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
         });
       });
     })();

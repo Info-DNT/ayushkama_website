@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Fresh Organic Tomatoes - Organic Grocery Store</title>
+    <title id="product-page-title">Ayushkama - Organic Superfoods</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -140,12 +140,14 @@
         <div class="container-fluid">
             <div class="row py-3 border-bottom">
                 <div
-                    class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
+                    class="col-sm-4 col-lg-3 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
                     <div class="d-flex align-items-center my-3 my-sm-0">
-                        <a href="index.html"><img src="images/logo.svg" alt="logo" class="img-fluid"></a>
+                        <a href="index.html" class="site-logo">
+                            <img src="images/ayushkama-logo.jpg" alt="logo" class="img-fluid">
+                        </a>
                     </div>
                 </div>
-                <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-4">
+                <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-3">
                     <div class="search-bar row bg-light p-2 rounded-4">
                         <div class="col-md-4 d-none d-md-block">
                             <select class="form-select border-0 bg-transparent">
@@ -175,8 +177,10 @@
                                 aria-expanded="false">Pages</a>
                             <ul class="dropdown-menu border-0 p-3 rounded-0 shadow">
                                 <li><a href="about.html" class="dropdown-item">About Us</a></li>
-                                <li><a href="single-product.html" class="dropdown-item">Single Product</a></li>
+                                <li><a href="cart.html" class="dropdown-item">Cart</a></li>
+                                <li><a href="index.html" class="dropdown-item">Blog</a></li>
                                 <li><a href="contact.html" class="dropdown-item">Contact</a></li>
+                                <li><a href="index.html" class="dropdown-item">My Account</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -191,13 +195,13 @@
                                     <use xlink:href="#wishlist"></use>
                                 </svg></a></li>
                         <li>
-                            <a class="p-2 mx-1 position-relative" style="cursor:pointer;" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasCart">
+                            <a href="cart.html" class="p-2 mx-1 position-relative" id="cart-icon-link">
                                 <svg width="24" height="24">
                                     <use xlink:href="#shopping-bag"></use>
                                 </svg>
-                                <span
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+                                <span id="cart-count"
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                    style="font-size:0.65rem; display:none;">0</span>
                             </a>
                         </li>
                     </ul>
@@ -251,58 +255,27 @@
                     </li>
                     <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Fruits &amp;
                             Veges</a></li>
-                    <li class="breadcrumb-item active fw-bold" aria-current="page">Fresh Organic Tomatoes</li>
+                    <li id="product-breadcrumb-active" class="breadcrumb-item active fw-bold" aria-current="page">
+                        Loading...</li>
                 </ol>
             </nav>
 
             <div class="row g-5 mb-5">
                 <!-- Image Gallery -->
                 <div class="col-lg-5">
-                    <div class="swiper product-large-slider mb-3 rounded-4 overflow-hidden bg-light d-flex align-items-center justify-content-center"
+                    <div class="swiper product-main-slider mb-3 rounded-4 overflow-hidden bg-light d-flex align-items-center justify-content-center"
                         style="min-height: 420px;">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide d-flex align-items-center justify-content-center p-4"
-                                style="min-height:420px; background:#f6faf1;">
-                                <img src="images/product-thumb-1.png" alt="Tomatoes View 1" class="img-fluid"
-                                    style="max-height:380px; object-fit:contain;">
-                            </div>
-                            <div class="swiper-slide d-flex align-items-center justify-content-center p-4"
-                                style="min-height:420px; background:#f6faf1;">
-                                <img src="images/product-thumb-2.png" alt="Tomatoes View 2" class="img-fluid"
-                                    style="max-height:380px; object-fit:contain;">
-                            </div>
-                            <div class="swiper-slide d-flex align-items-center justify-content-center p-4"
-                                style="min-height:420px; background:#f6faf1;">
-                                <img src="images/product-thumb-3.png" alt="Tomatoes View 3" class="img-fluid"
-                                    style="max-height:380px; object-fit:contain;">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper product-thumbnail-slider" style="height: 90px;">
-                        <div class="swiper-wrapper">
-                            <div
-                                class="swiper-slide bg-light d-flex align-items-center justify-content-center rounded-3 p-2">
-                                <img src="images/product-thumb-1.png" alt="Thumb 1" class="img-fluid"
-                                    style="max-height:70px;">
-                            </div>
-                            <div
-                                class="swiper-slide bg-light d-flex align-items-center justify-content-center rounded-3 p-2">
-                                <img src="images/product-thumb-2.png" alt="Thumb 2" class="img-fluid"
-                                    style="max-height:70px;">
-                            </div>
-                            <div
-                                class="swiper-slide bg-light d-flex align-items-center justify-content-center rounded-3 p-2">
-                                <img src="images/product-thumb-3.png" alt="Thumb 3" class="img-fluid"
-                                    style="max-height:70px;">
-                            </div>
+                        <div id="product-large-wrapper" class="swiper-wrapper">
+                            <!-- Dynamic Slides -->
                         </div>
                     </div>
                 </div>
 
                 <!-- Product Info -->
                 <div class="col-lg-7">
-                    <span class="badge bg-danger mb-3">SALE</span>
-                    <h1 class="display-5 fw-bold mb-3">Fresh Organic Tomatoes</h1>
+                    <span id="product-badge" class="badge bg-danger mb-3">BESTSELLER</span>
+                    <h1 id="product-name" class="display-5 fw-bold mb-3">Loading Product...</h1>
+                    <p id="product-tagline" class="text-primary fw-bold mb-3">...</p>
 
                     <!-- Rating -->
                     <div class="d-flex align-items-center gap-2 mb-4">
@@ -329,14 +302,13 @@
 
                     <!-- Price -->
                     <div class="d-flex align-items-center gap-3 mb-4">
-                        <h2 class="fw-bold text-primary mb-0">$5.00</h2>
-                        <h5 class="fw-normal text-muted text-decoration-line-through mb-0">$7.00</h5>
-                        <span class="badge bg-warning text-dark">Save 28%</span>
+                        <h2 id="product-price" class="fw-bold text-primary mb-0">$0.00</h2>
+                        <h5 id="product-original-price" class="fw-normal text-muted text-decoration-line-through mb-0">
+                            $0.00</h5>
+                        <span id="product-save-badge" class="badge bg-warning text-dark">Save 0%</span>
                     </div>
 
-                    <p class="text-secondary fs-6 mb-4">Locally grown, hand-picked fresh organic tomatoes. Rich in
-                        flavor, perfect for salads, slow-roasted sauces, or enjoyed as a healthy snack. 100% pesticide
-                        free and certified organic — guaranteed to bring color and nutrition to any dish.</p>
+                    <p id="product-description-brief" class="text-secondary fs-6 mb-4">...</p>
 
                     <hr class="my-4">
 
@@ -378,11 +350,11 @@
 
                     <!-- Meta -->
                     <ul class="list-unstyled text-secondary small d-flex flex-column gap-2">
-                        <li><strong class="text-dark">SKU:</strong> ORG-TOM-001</li>
-                        <li><strong class="text-dark">Category:</strong> <a href="#"
-                                class="text-decoration-none text-primary">Fruits &amp; Vegetables</a></li>
-                        <li><strong class="text-dark">Tags:</strong> Fresh, Organic, Local, Tomato, Healthy</li>
-                        <li><strong class="text-dark">Delivery:</strong> Free delivery on orders over $30</li>
+                        <li><strong class="text-dark">SKU:</strong> <span id="product-sku">...</span></li>
+                        <li><strong class="text-dark">Category:</strong> <a href="#" id="product-category"
+                                class="text-decoration-none text-primary">...</a></li>
+                        <li><strong class="text-dark">Origin:</strong> <span id="product-origin">...</span></li>
+                        <li><strong class="text-dark">MOQ:</strong> <span id="product-moq">Custom Quantity</span></li>
                     </ul>
                 </div>
             </div>
@@ -415,17 +387,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <h4 class="fw-bold mb-3">Product Description</h4>
-                            <p class="text-secondary lh-lg">Our organic tomatoes are cultivated in the sun-drenched
-                                fields of California, utilizing sustainable farming practices that enrich the soil and
-                                protect local water systems. We never use synthetic pesticides or fertilizers, allowing
-                                nature to do what it does best.</p>
-                            <p class="text-secondary lh-lg">As a result, our tomatoes are bursting with authentic,
-                                earthy flavor and are packed with Vitamin C, Potassium, and powerful antioxidants like
-                                Lycopene — known for its anti-inflammatory properties and heart health benefits.</p>
-                            <p class="text-secondary lh-lg">Whether you're slowly roasting them for a rich pasta sauce,
-                                slicing them thick for an artisanal sandwich, or dicing them for a fresh summer salsa,
-                                these tomatoes provide an unmatched culinary experience. Keep them at room temperature
-                                for best results; avoid refrigerating.</p>
+                            <div id="product-description-full" class="text-secondary lh-lg">...</div>
                             <ul class="list-unstyled mt-4 d-flex flex-column gap-2 text-secondary">
                                 <li>&#x2714; &nbsp;100% Certified Organic</li>
                                 <li>&#x2714; &nbsp;Locally sourced from California farms</li>
@@ -508,97 +470,14 @@
     <section class="py-5">
         <div class="container-lg">
             <h2 class="my-4 fw-bold">You May Also Like</h2>
-            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3">
-                <div class="col">
-                    <div
-                        class="product-item card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative related-product-card">
-                        <div class="image-holder zoom-effect bg-light d-flex align-items-center justify-content-center p-3"
-                            style="height:200px;">
-                            <img src="images/product-thumb-2.png" alt="Organic Spinach" class="img-fluid"
-                                style="max-height:160px;object-fit:contain;">
-                        </div>
-                        <div class="card-body p-3">
-                            <h6 class="card-title fw-bold mb-1">Organic Spinach</h6>
-                            <p class="text-primary fw-bold mb-0">$3.50</p>
-                        </div>
-                        <div class="product-action">
-                            <span class="text-muted small">250g bundle</span>
-                            <button class="btn btn-primary btn-sm rounded-pill px-3">Add to Cart</button>
-                        </div>
-                    </div>
+            <!-- Related Products Swiper -->
+            <div class="swiper related-products-swiper position-relative">
+                <div id="related-products-wrapper" class="swiper-wrapper pb-4">
+                    <!-- Dynamic slides injected by JS -->
                 </div>
-                <div class="col">
-                    <div
-                        class="product-item card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative related-product-card">
-                        <div class="image-holder zoom-effect bg-light d-flex align-items-center justify-content-center p-3"
-                            style="height:200px;">
-                            <img src="images/product-thumb-3.png" alt="Fresh Garlic" class="img-fluid"
-                                style="max-height:160px;object-fit:contain;">
-                        </div>
-                        <div class="card-body p-3">
-                            <h6 class="card-title fw-bold mb-1">Fresh Garlic</h6>
-                            <p class="text-primary fw-bold mb-0">$2.00</p>
-                        </div>
-                        <div class="product-action">
-                            <span class="text-muted small">Per head</span>
-                            <button class="btn btn-primary btn-sm rounded-pill px-3">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div
-                        class="product-item card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative related-product-card">
-                        <div class="image-holder zoom-effect bg-light d-flex align-items-center justify-content-center p-3"
-                            style="height:200px;">
-                            <img src="images/product-thumb-4.png" alt="Red Peppers" class="img-fluid"
-                                style="max-height:160px;object-fit:contain;">
-                        </div>
-                        <div class="card-body p-3">
-                            <h6 class="card-title fw-bold mb-1">Red Bell Peppers</h6>
-                            <p class="text-primary fw-bold mb-0">$4.00</p>
-                        </div>
-                        <div class="product-action">
-                            <span class="text-muted small">Pack of 3</span>
-                            <button class="btn btn-primary btn-sm rounded-pill px-3">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div
-                        class="product-item card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative related-product-card">
-                        <div class="image-holder zoom-effect bg-light d-flex align-items-center justify-content-center p-3"
-                            style="height:200px;">
-                            <img src="images/product-thumb-5.png" alt="Cucumbers" class="img-fluid"
-                                style="max-height:160px;object-fit:contain;">
-                        </div>
-                        <div class="card-body p-3">
-                            <h6 class="card-title fw-bold mb-1">Organic Cucumber</h6>
-                            <p class="text-primary fw-bold mb-0">$2.50</p>
-                        </div>
-                        <div class="product-action">
-                            <span class="text-muted small">Each</span>
-                            <button class="btn btn-primary btn-sm rounded-pill px-3">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div
-                        class="product-item card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative related-product-card">
-                        <div class="image-holder zoom-effect bg-light d-flex align-items-center justify-content-center p-3"
-                            style="height:200px;">
-                            <img src="images/product-thumb-6.png" alt="Lettuce" class="img-fluid"
-                                style="max-height:160px;object-fit:contain;">
-                        </div>
-                        <div class="card-body p-3">
-                            <h6 class="card-title fw-bold mb-1">Romaine Lettuce</h6>
-                            <p class="text-primary fw-bold mb-0">$3.00</p>
-                        </div>
-                        <div class="product-action">
-                            <span class="text-muted small">1 head</span>
-                            <button class="btn btn-primary btn-sm rounded-pill px-3">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -609,7 +488,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer-menu">
-                        <img src="images/logo.svg" width="240" height="70" alt="logo">
+                        <img src="images/ayushkama-logo.jpg" width="240" height="70" alt="logo">
                         <div class="social-links mt-3">
                             <ul class="d-flex list-unstyled gap-2">
                                 <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
@@ -627,7 +506,7 @@
                 </div>
                 <div class="col-md-2 col-sm-6">
                     <div class="footer-menu">
-                        <h5 class="widget-title">Organic</h5>
+                        <h5 class="widget-title">Ayushkama</h5>
                         <ul class="menu-list list-unstyled">
                             <li class="menu-item"><a href="about.html" class="nav-link">About us</a></li>
                             <li class="menu-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -662,7 +541,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-md-6 copyright">
-                    <p>&copy; 2024 Organic. All rights reserved.</p>
+                    <p>&copy; 2024 Ayushkama. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -674,21 +553,107 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/products-data.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
     <script>
         $(document).ready(function () {
-            // Product thumbnail slider
-            var productThumbs = new Swiper(".product-thumbnail-slider", {
+            // Get product ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            // Find product data
+            const product = productsData[productId] || productsData['moringa-leaf-powder'];
+
+            if (product) {
+                // Update text content
+                $('#product-page-title').text(product.name + ' - Ayushkama');
+                $('#product-breadcrumb-active').text(product.name);
+                $('#product-name').text(product.name);
+                $('#product-tagline').text(product.tagline);
+                $('#product-price').text(product.price);
+                $('#product-original-price').text(product.originalPrice);
+                $('#product-save-badge').text('Save ' + product.save);
+                $('#product-description-brief').text(product.description.substring(0, 200) + '...');
+                $('#product-description-full').html('<p>' + product.description.replace(/\n/g, '</p><p>') + '</p>');
+                $('#product-sku').text(product.sku);
+                $('#product-category').text(product.category);
+                $('#product-origin').text(product.origin);
+                $('#product-moq').text('Custom Quantity');
+
+                // Update main product image
+                let largeSlides = '';
+                product.images.forEach((img, index) => {
+                    largeSlides += `
+                        <div class="swiper-slide d-flex align-items-center justify-content-center p-4"
+                            style="min-height:420px; background:#f6faf1;">
+                            <img src="${img}" alt="${product.name} View ${index + 1}" class="img-fluid"
+                                style="max-height:380px; object-fit:contain;">
+                        </div>`;
+                });
+                $('#product-large-wrapper').html(largeSlides);
+
+                // Populate "You May Also Like" with all other products
+                let relatedSlides = '';
+                Object.keys(productsData).forEach(function (id) {
+                    if (id === productId) return; // skip current product
+                    const p = productsData[id];
+                    relatedSlides += `
+                        <div class="swiper-slide catalogue-item h-100" data-category="${p.category}">
+                            <div class="catalogue-card h-100">
+                                <div class="card-img-wrapper">
+                                    <img src="${p.images[0]}" alt="${p.name}" class="catalogue-img">
+                                    <div class="quick-view-overlay">
+                                        <a href="single-product.html?id=${id}" class="btn btn-primary rounded-pill px-4">Quick View</a>
+                                    </div>
+                                </div>
+                                <div class="card-body px-3 pb-3">
+                                    <h3 class="fs-6 fw-bold mb-0 mt-3">${p.name}</h3>
+                                    <p class="product-tagline mb-2">${p.tagline || ''}</p>
+                                    <div class="product-meta">
+                                        <span>⊙ Origin: <a href="#">${p.origin || "India"}</a></span><br>
+                                        <span>⊕ MOQ: Custom Quantity</span>
+                                    </div>
+                                    <div class="mt-3">
+                                        <button class="btn btn-primary w-100 rounded-pill btn-add-cart" data-id="${id}"
+                                            data-name="${p.name}" data-image="${p.images[0]}" data-moq="Custom Quantity">+ Add
+                                            to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                });
+                $('#related-products-wrapper').html(relatedSlides);
+            }
+
+            // Initialize main product image slider
+            var productLarge = new Swiper(".product-main-slider", {
                 spaceBetween: 10,
-                slidesPerView: 4,
-                freeMode: true,
-                watchSlidesProgress: true,
             });
-            // Product large image slider
-            var productLarge = new Swiper(".product-large-slider", {
-                spaceBetween: 10,
-                thumbs: { swiper: productThumbs },
+
+            // Initialize related products scroller
+            new Swiper(".related-products-swiper", {
+                slidesPerView: 2,
+                spaceBetween: 16,
+                autoplay: {
+                    delay: 1000, // Reduced from 2500 for faster scrolling
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.related-products-swiper .swiper-button-next',
+                    prevEl: '.related-products-swiper .swiper-button-prev',
+                },
+                pagination: {
+                    el: '.related-products-swiper .swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    576: { slidesPerView: 3 },
+                    768: { slidesPerView: 4 },
+                    992: { slidesPerView: 5 },
+                }
             });
+
             // Qty buttons
             $('.product-qty').each(function () {
                 var $el = $(this);

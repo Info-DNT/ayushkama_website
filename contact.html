@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Organic - Grocery Store HTML Website Template</title>
+    <title>Contact Us - Ayushkama</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,15 +109,15 @@
             <div class="row py-3 border-bottom">
 
                 <div
-                    class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
+                    class="col-sm-4 col-lg-3 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
                     <div class="d-flex align-items-center my-3 my-sm-0">
-                        <a href="index.html">
-                            <img src="images/logo.svg" alt="logo" class="img-fluid">
+                        <a href="index.html" class="site-logo">
+                            <img src="images/ayushkama-logo.jpg" alt="logo" class="img-fluid">
                         </a>
                     </div>
                 </div>
 
-                <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-4">
+                <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-3">
                     <div class="search-bar row bg-light p-2 rounded-4">
                         <div class="col-md-4 d-none d-md-block">
                             <select class="form-select border-0 bg-transparent">
@@ -152,8 +152,10 @@
                                 aria-expanded="false">Pages</a>
                             <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
                                 <li><a href="about.html" class="dropdown-item">About Us </a></li>
-                                <li><a href="single-product.html" class="dropdown-item">Single Product </a></li>
+                                <li><a href="cart.html" class="dropdown-item">Cart </a></li>
+                                <li><a href="index.html" class="dropdown-item">Blog </a></li>
                                 <li><a href="contact.html" class="dropdown-item">Contact </a></li>
+                                <li><a href="index.html" class="dropdown-item">My Account </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -177,10 +179,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="p-2 mx-1">
+                            <a href="cart.html" class="p-2 mx-1 position-relative" id="cart-icon-link">
                                 <svg width="24" height="24">
                                     <use xlink:href="#shopping-bag"></use>
                                 </svg>
+                                <span id="cart-count"
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                    style="font-size:0.65rem; display:none;">0</span>
                             </a>
                         </li>
                     </ul>
@@ -317,7 +322,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer-menu">
-                        <img src="images/logo.svg" width="240" height="70" alt="logo">
+                        <img src="images/ayushkama-logo.jpg" width="240" height="70" alt="logo">
                         <div class="social-links mt-3">
                             <ul class="d-flex list-unstyled gap-2">
                                 <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
@@ -335,7 +340,7 @@
                 </div>
                 <div class="col-md-2 col-sm-6">
                     <div class="footer-menu">
-                        <h5 class="widget-title">Organic</h5>
+                        <h5 class="widget-title">Ayushkama</h5>
                         <ul class="menu-list list-unstyled">
                             <li class="menu-item"><a href="about.html" class="nav-link">About us</a></li>
                             <li class="menu-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -349,7 +354,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-md-6 copyright">
-                    <p>© 2024 Organic. All rights reserved.</p>
+                    <p>© 2024 Ayushkama. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -361,6 +366,7 @@
         crossorigin="anonymous"></script>
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

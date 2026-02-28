@@ -1,27 +1,27 @@
-(function($) {
+(function ($) {
 
   "use strict";
 
-  var initPreloader = function() {
-    $(document).ready(function($) {
-    var Body = $('body');
-        Body.addClass('preloader-site');
+  var initPreloader = function () {
+    $(document).ready(function ($) {
+      var Body = $('body');
+      Body.addClass('preloader-site');
     });
-    $(window).load(function() {
-        $('.preloader-wrapper').fadeOut();
-        $('body').removeClass('preloader-site');
+    $(window).load(function () {
+      $('.preloader-wrapper').fadeOut();
+      $('body').removeClass('preloader-site');
     });
   }
 
   // init Chocolat light box
-	var initChocolat = function() {
-		Chocolat(document.querySelectorAll('.image-link'), {
-		  imageSize: 'contain',
-		  loop: true,
-		})
-	}
+  var initChocolat = function () {
+    Chocolat(document.querySelectorAll('.image-link'), {
+      imageSize: 'contain',
+      loop: true,
+    })
+  }
 
-  var initSwiper = function() {
+  var initSwiper = function () {
 
     var swiper = new Swiper(".main-swiper", {
       speed: 500,
@@ -32,8 +32,9 @@
     });
 
     var category_swiper = new Swiper(".category-carousel", {
-      slidesPerView: 8,
+      slidesPerView: 7,
       spaceBetween: 30,
+      centeredSlides: false,
       speed: 500,
       navigation: {
         nextEl: ".category-carousel-next",
@@ -49,22 +50,22 @@
         991: {
           slidesPerView: 5,
         },
-        1500: {
-          slidesPerView: 8,
+        1400: {
+          slidesPerView: 7,
         },
       }
     });
 
-    $(".products-carousel").each(function(){
+    $(".products-carousel").each(function () {
       var $el_id = $(this).attr('id');
 
-      var products_swiper = new Swiper("#"+$el_id+" .swiper", {
+      var products_swiper = new Swiper("#" + $el_id + " .swiper", {
         slidesPerView: 5,
         spaceBetween: 30,
         speed: 500,
         navigation: {
-          nextEl: "#"+$el_id+" .products-carousel-next",
-          prevEl: "#"+$el_id+" .products-carousel-prev",
+          nextEl: "#" + $el_id + " .products-carousel-next",
+          prevEl: "#" + $el_id + " .products-carousel-prev",
         },
         breakpoints: {
           0: {
@@ -117,23 +118,23 @@
   }
 
   // input spinner
-  var initProductQty = function(){
+  var initProductQty = function () {
 
-    $('.product-qty').each(function(){
-      
+    $('.product-qty').each(function () {
+
       var $el_product = $(this);
       var quantity = 0;
-      
-      $el_product.find('.quantity-right-plus').click(function(e){
+
+      $el_product.find('.quantity-right-plus').click(function (e) {
         e.preventDefault();
         quantity = parseInt($el_product.find('#quantity').val());
         $el_product.find('#quantity').val(quantity + 1);
       });
 
-      $el_product.find('.quantity-left-minus').click(function(e){
+      $el_product.find('.quantity-left-minus').click(function (e) {
         e.preventDefault();
         quantity = parseInt($el_product.find('#quantity').val());
-        if(quantity>0){
+        if (quantity > 0) {
           $el_product.find('#quantity').val(quantity - 1);
         }
       });
@@ -143,7 +144,7 @@
   }
 
   // init jarallax parallax
-  var initJarallax = function() {
+  var initJarallax = function () {
     jarallax(document.querySelectorAll(".jarallax"));
 
     jarallax(document.querySelectorAll(".jarallax-keep-img"), {
@@ -152,8 +153,8 @@
   }
 
   // document ready
-  $(document).ready(function() {
-    
+  $(document).ready(function () {
+
     initPreloader();
     initSwiper();
     initProductQty();
