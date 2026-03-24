@@ -1835,3 +1835,182 @@ a.btn-link.text-light:after {
   padding: 11px 18px; border-radius: 8px; font-size: 0.82rem; transition: background 0.2s;
 }
 .btn-remove-lite:hover { background: #fce1cd; }
+
+/* ============================================ */
+/* MOBILE VIEW OVERRIDES (max-width: 991px)      */
+/* ============================================ */
+
+@media (max-width: 991px) {
+  /* Header Adjustments */
+  header .row.align-items-center {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+
+  .site-logo img {
+    max-height: 40px !important; /* Matches inline style in HTML */
+  }
+
+  .navbar-toggler svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Search Bar Compactness */
+  .search-bar {
+    padding: 6px 12px !important;
+    margin-bottom: 5px;
+    background: #f8f9fa !important;
+  }
+
+  .search-bar input {
+    font-size: 0.9rem;
+  }
+
+  /* Hero Banner Fixes */
+  .hero-banner {
+    max-height: 400px !important;
+    min-height: 320px !important;
+  }
+
+  .hero-banner__text-overlay {
+    top: 55% !important; /* Move down slightly to avoid overlap with header */
+    left: 1.5rem !important;
+    width: calc(100% - 3rem) !important;
+    max-width: 100% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .hero-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.4rem !important;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .hero-banner__cta {
+    gap: 0.75rem !important;
+  }
+
+  .hero-banner__cta .btn {
+    padding: 10px 20px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Origin Story Section */
+  .origin-section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .origin-section h2 {
+    font-size: 1.85rem !important;
+    text-align: center;
+    margin-bottom: 1.8rem !important;
+  }
+
+  .origin-section .text-muted {
+    text-align: center;
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .origin-stat-number {
+    font-size: 2rem !important;
+  }
+
+  .origin-stat-label {
+    font-size: 0.7rem !important;
+  }
+
+  /* Offcanvas Menu Styling */
+  .offcanvas-body .nav-link {
+    font-size: 1.05rem;
+    padding: 14px 0 !important;
+    font-weight: 600;
+  }
+
+  .offcanvas-body h4.fs-6 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    font-weight: 800;
+    color: var(--bs-secondary);
+    border-bottom: 2px solid var(--bs-primary);
+    display: inline-block;
+  }
+
+  /* Layout refinements */
+  .container-lg {
+    --bs-gutter-x: 1.5rem !important;
+  }
+
+  /* About Page Mobile Fixes */
+  .about-hero {
+    padding-top: 3rem !important;
+    padding-bottom: 2rem !important;
+    text-align: center;
+  }
+  .about-hero h1 {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+  }
+  .about-hero .hero-badge {
+    font-size: 0.7rem !important;
+    padding: 4px 10px !important;
+    margin-bottom: 5px !important;
+    display: inline-block;
+  }
+  .hero-img-wrap img {
+    height: 300px !important;
+    margin-top: 2rem;
+  }
+  .hero-float-card {
+    right: 1rem !important;
+    bottom: 1rem !important;
+    padding: 10px 15px !important;
+  }
+
+  .stats-strip {
+    padding: 2rem 0 !important;
+  }
+  .stats-strip .sn {
+    font-size: 1.5rem !important;
+  }
+  .stats-strip .sl {
+    font-size: 0.65rem !important;
+  }
+
+  /* Contact Page Mobile Fixes */
+  .contact-hero {
+    padding: 3rem 0 !important;
+    text-align: center;
+  }
+  .contact-hero h1 {
+    font-size: 1.8rem !important;
+  }
+  .inquiry-tabs .d-flex {
+    justify-content: center;
+  }
+  .inquiry-tab-btn {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 0.85rem !important;
+  }
+  .form-card {
+    padding: 1.5rem !important;
+  }
+  .info-section {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.5rem !important;
+  }
+}

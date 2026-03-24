@@ -56,11 +56,13 @@
 
   /* ── Badge update (runs on every page) ─────────── */
   function updateCartBadge() {
-    var badge = document.getElementById('cart-count');
-    if (!badge) return;
+    var badges = document.querySelectorAll('#cart-count, .cart-count-badge');
+    if (badges.length === 0) return;
     var count = getCartCount();
-    badge.textContent = count;
-    badge.style.display = count > 0 ? 'inline-block' : 'none';
+    badges.forEach(function (badge) {
+      badge.textContent = count;
+      badge.style.display = count > 0 ? 'inline-block' : 'none';
+    });
   }
 
   /* ── Qty stepper builder ────────────────────────── */
