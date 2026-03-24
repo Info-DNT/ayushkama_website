@@ -194,130 +194,570 @@
             </div>
         </div>
     </header>
+  <!-- BREADCRUMB -->
+  <div class="pg-bc">
+    <div class="container-lg">
+      <a href="index.html">Home</a>
+      <span class="mx-2">/</span>
+      <span>Contact &amp; Export Inquiry</span>
+    </div>
+  </div>
 
-    <!-- CONTENT -->
-    <section class="jarallax py-5 bg-light"
-        style="background-image: url('images/banner-2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
-        <div class="container-lg py-5">
-            <div class="row pt-5 mt-3">
-                <div class="col-lg-6 col-md-8">
-                    <h1 class="display-3 fw-bold text-dark">Contact Us</h1>
-                    <nav class="breadcrumb">
-                        <a class="breadcrumb-item text-dark" href="index.html">Home</a>
-                        <span class="breadcrumb-item active" aria-current="page">Contact Us</span>
-                    </nav>
-                </div>
-            </div>
+  <!-- PAGE HERO -->
+  <section class="contact-hero">
+    <div class="container-lg">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <div class="hero-pill mb-3">Get in Touch</div>
+          <h1>Let's Build a Partnership<br>Rooted in Quality</h1>
+          <p class="mt-3">Whether you're an importer exploring our catalogue, a distributor requesting samples, or a brand looking for white-label supply — our export team responds within 24 business hours.</p>
         </div>
-    </section>
+        <div class="col-lg-5">
+          <div class="row g-3">
+            <div class="col-6">
+              <div style="background:#fff;border:1px solid var(--green-border);border-radius:12px;padding:16px;text-align:center">
+                <div style="font-size:1.6rem;font-weight:700;color:var(--green-dark)">24hrs</div>
+                <div style="font-size:.75rem;color:var(--text-contact-muted)">Response time</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:#fff;border:1px solid var(--green-border);border-radius:12px;padding:16px;text-align:center">
+                <div style="font-size:1.6rem;font-weight:700;color:var(--green-dark)">23</div>
+                <div style="font-size:.75rem;color:var(--text-contact-muted)">Countries served</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:#fff;border:1px solid var(--green-border);border-radius:12px;padding:16px;text-align:center">
+                <div style="font-size:1.6rem;font-weight:700;color:var(--green-dark)">Free</div>
+                <div style="font-size:.75rem;color:var(--text-contact-muted)">Sample kit available</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:#fff;border:1px solid var(--green-border);border-radius:12px;padding:16px;text-align:center">
+                <div style="font-size:1.6rem;font-weight:700;color:var(--green-dark)">FCL/LCL</div>
+                <div style="font-size:.75rem;color:var(--text-contact-muted)">Flexible quantities</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="py-5 mt-5">
-        <div class="container-lg">
-            <div class="row g-5">
-                <!-- Contact Info -->
-                <div class="col-lg-4">
-                    <div class="pe-lg-5">
-                        <h3 class="display-6 fw-bold mb-4 text-primary">Get in Touch</h3>
-                        <p class="fs-6 text-secondary mb-5">Have a question about an order, our farm partners, or just
-                            want to say hello? We'd love to hear from you. Reach out via phone, email, or drop by our
-                            store.</p>
+  <!-- INQUIRY TYPE TABS -->
+  <div class="inquiry-tabs">
+    <div class="container-lg">
+      <div class="d-flex flex-wrap">
+        <button class="inquiry-tab-btn active" onclick="switchTab('export', this)">
+          📦 Export / Wholesale Inquiry
+        </button>
+        <button class="inquiry-tab-btn" onclick="switchTab('sample', this)">
+          🧪 Request a Sample
+        </button>
+        <button class="inquiry-tab-btn" onclick="switchTab('label', this)">
+          🏷 White Label / Private Label
+        </button>
+        <button class="inquiry-tab-btn" onclick="switchTab('general', this)">
+          💬 General Inquiry
+        </button>
+      </div>
+    </div>
+  </div>
 
-                        <ul class="list-unstyled d-flex flex-column gap-4">
-                            <li class="d-flex align-items-center gap-3">
-                                <div class="bg-primary text-white p-3 rounded-circle d-flex align-items-center justify-content-center"
-                                    style="width: 50px; height: 50px;">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="#location"></use>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h5 class="fw-bold mb-1">Our Store</h5>
-                                    <p class="text-secondary mb-0">123 Organic Lane, Green City, CA 90210</p>
-                                </div>
-                            </li>
-                            <li class="d-flex align-items-center gap-3">
-                                <div class="bg-primary text-white p-3 rounded-circle d-flex align-items-center justify-content-center"
-                                    style="width: 50px; height: 50px;">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="#phone"></use>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h5 class="fw-bold mb-1">Phone Number</h5>
-                                    <p class="text-secondary mb-0">+1 (800) 123-4567</p>
-                                </div>
-                            </li>
-                            <li class="d-flex align-items-center gap-3">
-                                <div class="bg-primary text-white p-3 rounded-circle d-flex align-items-center justify-content-center"
-                                    style="width: 50px; height: 50px;">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="#mail"></use>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h5 class="fw-bold mb-1">Email Address</h5>
-                                    <p class="text-secondary mb-0">hello@organicgrocery.com</p>
-                                </div>
-                            </li>
-                        </ul>
+  <!-- MAIN CONTACT SECTION -->
+  <section class="contact-main">
+    <div class="container-lg">
+      <div class="row g-5">
+
+        <!-- LEFT: FORMS -->
+        <div class="col-lg-7">
+
+          <!-- TAB 1: Export / Wholesale -->
+          <div id="tab-export" class="tab-panel active">
+            <div class="form-card">
+              <h3>Export &amp; Wholesale Inquiry</h3>
+              <p class="fc-sub">Tell us which products you need, your target market, and estimated quantities. Our export team will respond with pricing, MOQs, and certification documentation within 24 hours.</p>
+              <form id="exportForm" onsubmit="submitForm(event, 'exportSuccess')">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">First Name *</label>
+                    <input type="text" class="form-control" placeholder="First name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Last Name *</label>
+                    <input type="text" class="form-control" placeholder="Last name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Company / Organisation *</label>
+                    <input type="text" class="form-control" placeholder="Your company name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Job Title</label>
+                    <input type="text" class="form-control" placeholder="e.g. Procurement Manager">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" class="form-control" placeholder="company@email.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phone / WhatsApp</label>
+                    <input type="tel" class="form-control" placeholder="+1 / +44 / +971...">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Country / Market *</label>
+                    <select class="form-select" required>
+                      <option value="">Select your country</option>
+                      <option>United States</option>
+                      <option>United Kingdom</option>
+                      <option>Germany</option>
+                      <option>Netherlands</option>
+                      <option>France</option>
+                      <option>Canada</option>
+                      <option>UAE</option>
+                      <option>Saudi Arabia</option>
+                      <option>Singapore</option>
+                      <option>Australia</option>
+                      <option>Japan</option>
+                      <option>South Korea</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Estimated Annual Volume</label>
+                    <select class="form-select">
+                      <option value="">Select range</option>
+                      <option>Under 500 kg / year</option>
+                      <option>500 kg – 2 MT / year</option>
+                      <option>2 MT – 10 MT / year</option>
+                      <option>10 MT – 50 MT / year</option>
+                      <option>50 MT+ / year</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Products of Interest *</label>
+                    <div class="product-grid mt-1">
+                      <label class="prod-check"><input type="checkbox"><span>Lakadong Turmeric</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Moringa Leaf Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Ashwagandha Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Amla Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Raw Forest Honey</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Flaxseeds (Alsi)</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Sesame Oil (Wood-Pressed)</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Jaggery Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Palm Jaggery</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Phool Makhana</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Ragi / Amaranth Flour</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Wheatgrass Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Sabja (Basil) Seeds</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Stevia Leaves</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Sattu (Roasted Gram)</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Other / Multiple</span></label>
                     </div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Certification Requirements</label>
+                    <select class="form-select">
+                      <option value="">Select if applicable</option>
+                      <option>USDA Organic</option>
+                      <option>EU Organic (EC 834/2007)</option>
+                      <option>India Organic (NPOP)</option>
+                      <option>Multiple certifications needed</option>
+                      <option>No specific requirement</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Additional Notes</label>
+                    <textarea class="form-control" placeholder="Tell us about your business, packaging requirements, delivery port, or any other details..."></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn-submit">Send Export Inquiry →</button>
+                  </div>
                 </div>
+              </form>
+              <div id="exportSuccess" class="form-success">
+                <div class="fs-icon">✅</div>
+                <h4>Inquiry Received!</h4>
+                <p>Thank you — our export team will review your requirements and respond within 24 business hours with pricing, MOQs, and relevant certification documents.</p>
+              </div>
+            </div>
+          </div>
 
-                <!-- Contact Form -->
-                <div class="col-lg-8">
-                    <div class="bg-primary-bg-subtle p-5 rounded-4 border-0">
-                        <h3 class="fw-bold mb-4">Send us a Message</h3>
-                        <form action="#" class="contact-form">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control bg-white border-0 py-3 px-4 rounded-3"
-                                        placeholder="First Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control bg-white border-0 py-3 px-4 rounded-3"
-                                        placeholder="Last Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control bg-white border-0 py-3 px-4 rounded-3"
-                                        placeholder="Email Address" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="tel" class="form-control bg-white border-0 py-3 px-4 rounded-3"
-                                        placeholder="Phone Number">
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control bg-white border-0 py-3 px-4 rounded-3"
-                                        placeholder="Subject" required>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control bg-white border-0 py-3 px-4 rounded-3" rows="6"
-                                        placeholder="Your Message..." required></textarea>
-                                </div>
-                                <div class="col-12 mt-4 text-end">
-                                    <button type="submit"
-                                        class="btn btn-dark text-uppercase px-5 py-3 rounded-pill fw-bold">Send
-                                        Message</button>
-                                </div>
-                            </div>
-                        </form>
+          <!-- TAB 2: Sample Request -->
+          <div id="tab-sample" class="tab-panel">
+            <div class="form-card">
+              <h3>Request a Free Sample Kit</h3>
+              <p class="fc-sub">We offer complimentary sample kits to qualified importers, distributors, and brand formulators. Select up to 5 products and provide your shipping address.</p>
+              <form id="sampleForm" onsubmit="submitForm(event, 'sampleSuccess')">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-control" placeholder="Full name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Company *</label>
+                    <input type="text" class="form-control" placeholder="Company name" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" class="form-control" placeholder="company@email.com" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Shipping Address *</label>
+                    <textarea class="form-control" style="min-height:80px" placeholder="Full shipping address including country and postal code" required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Select up to 5 Products *</label>
+                    <div class="product-grid mt-1">
+                      <label class="prod-check"><input type="checkbox"><span>Lakadong Turmeric</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Moringa Leaf Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Ashwagandha Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Amla Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Raw Forest Honey</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Flaxseeds</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Jaggery Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Phool Makhana</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Wheatgrass Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Sabja Seeds</span></label>
                     </div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Intended Use</label>
+                    <select class="form-select">
+                      <option value="">Select one</option>
+                      <option>Retail import / distribution</option>
+                      <option>Product formulation / manufacturing</option>
+                      <option>Private label / white label</option>
+                      <option>Food service / hospitality</option>
+                      <option>Quality assessment</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn-submit">Request Sample Kit →</button>
+                  </div>
                 </div>
+              </form>
+              <div id="sampleSuccess" class="form-success">
+                <div class="fs-icon">📦</div>
+                <h4>Sample Request Submitted!</h4>
+                <p>We'll review your request and ship your sample kit within 5–7 business days. You'll receive tracking details by email once dispatched.</p>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Map Section (Placeholder styling) -->
-    <section class="py-0 mt-5">
-        <div class="container-fluid p-0">
-            <div class="bg-light w-100 d-flex align-items-center justify-content-center text-secondary"
-                style="height: 400px;">
-                <h4 class="fw-bold">Google Maps Integration Placeholder</h4>
+          <!-- TAB 3: White Label -->
+          <div id="tab-label" class="tab-panel">
+            <div class="form-card">
+              <h3>White Label &amp; Private Label Inquiry</h3>
+              <p class="fc-sub">We supply bulk organic superfoods for private-label brands and product formulators worldwide. Tell us your brand requirements and we'll provide a tailored quote.</p>
+              <form id="labelForm" onsubmit="submitForm(event, 'labelSuccess')">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-control" placeholder="Full name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Brand / Company *</label>
+                    <input type="text" class="form-control" placeholder="Brand name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" class="form-control" placeholder="company@email.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Country *</label>
+                    <select class="form-select" required>
+                      <option value="">Select country</option>
+                      <option>United States</option><option>United Kingdom</option><option>Germany</option>
+                      <option>UAE</option><option>Australia</option><option>Canada</option><option>Other</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Packaging Requirement</label>
+                    <select class="form-select">
+                      <option value="">Select type</option>
+                      <option>Retail pouch (100g – 500g)</option>
+                      <option>Bulk bags (1 kg – 25 kg)</option>
+                      <option>Custom packaging design</option>
+                      <option>Existing label on our pack format</option>
+                      <option>Flexible / discuss with team</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Products Needed</label>
+                    <div class="product-grid mt-1">
+                      <label class="prod-check"><input type="checkbox"><span>Lakadong Turmeric</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Moringa Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Ashwagandha</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Jaggery Powder</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Makhana / Snacks</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Seeds Range</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Functional Flours</span></label>
+                      <label class="prod-check"><input type="checkbox"><span>Other / Multiple</span></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Brief / Additional Details</label>
+                    <textarea class="form-control" placeholder="Describe your brand, target market, SKU count, and any specific requirements..."></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn-submit">Send White Label Inquiry →</button>
+                  </div>
+                </div>
+              </form>
+              <div id="labelSuccess" class="form-success">
+                <div class="fs-icon">🏷</div>
+                <h4>Inquiry Received!</h4>
+                <p>Our team will reach out within 24 hours to discuss your white label requirements, pricing, and timelines.</p>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- FOOTER -->
-    <footer class="py-5 bg-white">
+          <!-- TAB 4: General -->
+          <div id="tab-general" class="tab-panel">
+            <div class="form-card">
+              <h3>General Inquiry</h3>
+              <p class="fc-sub">Questions about our certifications, farming practices, export documentation, or anything else? We're happy to help.</p>
+              <form id="generalForm" onsubmit="submitForm(event, 'generalSuccess')">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">First Name *</label>
+                    <input type="text" class="form-control" placeholder="First name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Last Name *</label>
+                    <input type="text" class="form-control" placeholder="Last name" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" class="form-control" placeholder="your@email.com" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Subject *</label>
+                    <select class="form-select" required>
+                      <option value="">Select a topic</option>
+                      <option>Certification documentation</option>
+                      <option>Farming &amp; sourcing practices</option>
+                      <option>Shipping &amp; logistics</option>
+                      <option>Payment &amp; pricing</option>
+                      <option>Media / press inquiry</option>
+                      <option>Partnership opportunity</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Your Message *</label>
+                    <textarea class="form-control" placeholder="How can we help you?" required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn-submit">Send Message →</button>
+                  </div>
+                </div>
+              </form>
+              <div id="generalSuccess" class="form-success">
+                <div class="fs-icon">✉️</div>
+                <h4>Message Sent!</h4>
+                <p>Thank you for reaching out. Our team will get back to you within 24 business hours.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: CONTACT INFO SIDEBAR -->
+        <div class="col-lg-5 info-section">
+
+          <div class="resp-badge">
+            <span class="resp-dot"></span>
+            Export team is available Mon – Sat, 9am – 6pm IST
+          </div>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/919876543210?text=Hello%20Ayushkama%2C%20I%27m%20interested%20in%20your%20organic%20superfood%20products%20for%20export."
+             class="whatsapp-btn" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967c-.273-.099-.471-.148-.67.15c-.197.297-.767.966-.94 1.164c-.173.199-.347.223-.644.075c-.297-.15-1.255-.463-2.39-1.475c-.883-.788-1.48-1.761-1.653-2.059c-.173-.297-.018-.458.13-.606c.134-.133.298-.347.446-.52c.149-.174.198-.298.298-.497c.099-.198.05-.371-.025-.52c-.075-.149-.669-1.612-.916-2.207c-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372c-.272.297-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487c.709.306 1.262.489 1.694.625c.712.227 1.36.195 1.871.118c.571-.085 1.758-.719 2.006-1.413c.248-.694.248-1.289.173-1.413c-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214l-3.741.982l.998-3.648l-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
+
+          <!-- Contact detail cards -->
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <h6>Registered Office</h6>
+              <p>Ayushkama Organic Pvt. Ltd.<br>New Delhi – 110001, India</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .85h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.84a16 16 0 006.29 6.29l1.06-1.34a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <h6>Phone / WhatsApp</h6>
+              <p><a href="tel:+919876543210">+91 98765 43210</a><br>
+              <a href="https://wa.me/919876543210" target="_blank">WhatsApp available</a></p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <h6>Email</h6>
+              <p><a href="mailto:exports@ayushkama.com">exports@ayushkama.com</a><br>
+              <a href="mailto:info@ayushkama.com">info@ayushkama.com</a></p>
+            </div>
+          </div>
+
+          <!-- Department contacts -->
+          <h6 class="fw-bold mt-4 mb-3" style="color:var(--green-dark)">Reach the Right Team</h6>
+
+          <div class="dept-card">
+            <div class="dept-label">Export &amp; Wholesale</div>
+            <div class="dept-name">Export Sales Team</div>
+            <div class="dept-email"><a href="mailto:exports@ayushkama.com">exports@ayushkama.com</a> · Pricing, MOQs, Logistics</div>
+          </div>
+          <div class="dept-card">
+            <div class="dept-label">Quality &amp; Certifications</div>
+            <div class="dept-name">Quality Assurance</div>
+            <div class="dept-email"><a href="mailto:quality@ayushkama.com">quality@ayushkama.com</a> · COA, Lab Reports, Specs</div>
+          </div>
+          <div class="dept-card">
+            <div class="dept-label">Private &amp; White Label</div>
+            <div class="dept-name">Brand Partnerships</div>
+            <div class="dept-email"><a href="mailto:brands@ayushkama.com">brands@ayushkama.com</a> · Custom Packaging &amp; OEM</div>
+          </div>
+          <div class="dept-card">
+            <div class="dept-label">Press &amp; Media</div>
+            <div class="dept-name">Communications</div>
+            <div class="dept-email"><a href="mailto:press@ayushkama.com">press@ayushkama.com</a> · Media Kits, Interviews</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP + OFFICES -->
+  <section class="map-section">
+    <div class="container-lg">
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <div class="sec-eyebrow">Where We Are</div>
+          <h2 class="sec-title">Our Export Offices &amp; Sourcing Regions</h2>
+        </div>
+      </div>
+
+      <!-- Google Maps embed -->
+      <div class="map-embed mb-5">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.89796929637!2d77.06889754101562!3d28.52758200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sNew%20Delhi%2C%20Delhi%2C%20India!5e0!3m2!1sen!2s!4v1700000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Ayushkama office location">
+        </iframe>
+      </div>
+
+      <!-- Regional export offices -->
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-3">
+          <div class="office-card">
+            <span class="office-flag">🇮🇳</span>
+            <h6>India (HQ)</h6>
+            <p>New Delhi<br>Export operations &amp; farm network<br><a href="mailto:exports@ayushkama.com" style="color:var(--green-mid)">exports@ayushkama.com</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="office-card">
+            <span class="office-flag">🇦🇪</span>
+            <h6>Middle East</h6>
+            <p>Dubai, UAE<br>GCC &amp; MENA market coverage<br><a href="mailto:uae@ayushkama.com" style="color:var(--green-mid)">uae@ayushkama.com</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="office-card">
+            <span class="office-flag">🇩🇪</span>
+            <h6>Europe</h6>
+            <p>Hamburg, Germany<br>EU regulatory &amp; distribution<br><a href="mailto:europe@ayushkama.com" style="color:var(--green-mid)">europe@ayushkama.com</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="office-card">
+            <span class="office-flag">🇺🇸</span>
+            <h6>North America</h6>
+            <p>New Jersey, USA<br>US &amp; Canada distribution<br><a href="mailto:usa@ayushkama.com" style="color:var(--green-mid)">usa@ayushkama.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section py-5">
+    <div class="container-lg">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <div class="sec-eyebrow">Common Questions</div>
+          <h2 class="sec-title">Frequently Asked by Importers</h2>
+        </div>
+      </div>
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <div class="faq-item">
+            <div class="faq-q">What is your minimum order quantity (MOQ)?</div>
+            <p class="faq-a">MOQs vary by product. Most powders start at 100 kg per SKU. For seeds and whole foods, MOQs typically begin at 500 kg. We can accommodate smaller trial orders for new buyers — please indicate this in your inquiry.</p>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Which certifications do your products carry?</div>
+            <p class="faq-a">Our products are certified USDA Organic, EU Organic (EC 834/2007), India Organic (NPOP), FSSAI Licensed, ISO 22000:2018, and APEDA Registered. Full certificate copies are available on request.</p>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Do you offer white-label or private-label supply?</div>
+            <p class="faq-a">Yes. We supply in bulk to private-label brands and can accommodate custom packaging in various formats — from retail pouches to bulk sacks. Contact our brand partnerships team for a tailored quote.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="faq-item">
+            <div class="faq-q">How long does shipping take?</div>
+            <p class="faq-a">Sea freight transit times: US/Canada 18–25 days, EU 20–28 days, UAE 10–14 days, Australia 22–30 days. Air freight is available for urgent shipments. We handle all export documentation including phytosanitary certificates and customs clearance support.</p>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Can I get a Certificate of Analysis (COA) before ordering?</div>
+            <p class="faq-a">Absolutely. We provide third-party lab COAs for all products covering curcumin content, moisture, heavy metals, microbial testing, and pesticide residue. Email quality@ayushkama.com with your product list.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Tab switching
+    function switchTab(tabName, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.inquiry-tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + tabName).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    // Form submission
+    function submitForm(e, successId) {
+      e.preventDefault();
+      const form = e.target;
+      const success = document.getElementById(successId);
+      form.style.display = 'none';
+      success.style.display = 'block';
+    }
+  </script>
+<footer class="py-5">
         <div class="container-lg">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">

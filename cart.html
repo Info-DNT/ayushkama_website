@@ -2,432 +2,816 @@
 <html lang="en">
 
 <head>
-    <title>Cart — Ayushkama Organic Superfoods</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Your product enquiry cart — Ayushkama certified organic superfoods.">
+  <title>Cart – Ayushkama Organic Superfoods</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your product enquiry cart — Ayushkama certified organic superfoods.">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/vendor.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        .cart-product-img {
-            width: 72px;
-            height: 72px;
-            object-fit: contain;
-            background: #f9f9f9;
-            padding: 6px;
-        }
+  <style>
+    /* Shared variables and base styles are in style.css */
+    /* Suggest swiper card – matches product page style */
+    .suggest-swiper {
+      padding-bottom: 40px !important;
+    }
 
-        .cart-table th {
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: #888;
-            border-bottom: 2px solid #eee;
-            font-weight: 600;
-        }
+    .suggest-swiper .swiper-button-next,
+    .suggest-swiper .swiper-button-prev {
+      color: #2d5a1b;
+      top: 38%;
+    }
 
-        .cart-table td {
-            vertical-align: middle;
-            border-color: #f3f3f3;
-            padding: 1rem 0.75rem;
-        }
+    .suggest-swiper .swiper-button-next::after,
+    .suggest-swiper .swiper-button-prev::after {
+      font-size: 1.1rem !important;
+    }
 
-        .cart-summary-card {
-            background: var(--bs-secondary);
-            color: #fff;
-            border-radius: 16px;
-            padding: 32px;
-        }
+    .suggest-swiper .swiper-pagination-bullet-active {
+      background: #2d5a1b;
+    }
 
-        .cart-summary-card h5 {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
+    .btn-add-enquiry {
+      background: #3d7a24;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 9px 18px;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: background .2s;
+    }
 
-        .cart-total-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #fff;
-            line-height: 1;
-        }
+    .btn-add-enquiry:hover {
+      background: #2d5a1b;
+    }
 
-        .btn-enquiry {
-            background: #f7a422;
-            color: #fff;
-            border: none;
-            border-radius: 999px;
-            padding: 12px 28px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            width: 100%;
-            transition: background 0.25s ease, transform 0.2s ease;
-        }
+    .suggest-card img {
+      height: 175px;
+      object-fit: cover;
+      width: 100%;
+    }
 
-        .btn-enquiry:hover {
-            background: #e5941a;
-            color: #fff;
-            transform: translateY(-2px);
-        }
-
-        #cart-empty-msg {
-            display: none;
-        }
-    </style>
+    .suggest-card h6 {
+      font-weight: 700;
+      color: #222;
+      font-size: .9rem;
+      margin-bottom: 3px;
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- SVG Sprite (minimal set needed for this page) -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <defs>
-            <symbol id="facebook" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M15.12 5.32H17V2.14A26.11 26.11 0 0 0 14.26 2c-2.72 0-4.58 1.66-4.58 4.7v2.62H6.61v3.56h3.07V22h3.68v-9.12h3.06l.46-3.56h-3.52V7.05c0-1.05.28-1.73 1.76-1.73Z" />
-            </symbol>
-            <symbol id="instagram" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M12 6.87A5.13 5.13 0 1 0 17.14 12A5.12 5.12 0 0 0 12 6.87Zm0 8.46A3.33 3.33 0 1 1 15.33 12A3.33 3.33 0 0 1 12 15.33Z" />
-            </symbol>
-            <symbol id="twitter" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M22.991 3.95a1 1 0 0 0-1.51-.86a7.48 7.48 0 0 1-1.874.794a5.152 5.152 0 0 0-3.374-1.242a5.232 5.232 0 0 0-5.223 5.063a11.032 11.032 0 0 1-6.814-3.924a1 1 0 0 0-1.642.135A5.276 5.276 0 0 0 3.311 8.63a5.185 5.185 0 0 0 1.568 3.312a5.204 5.204 0 0 0 2.362 2.922a7.465 7.465 0 0 1-3.59.448A1 1 0 0 0 2.45 19.3a12.942 12.942 0 0 0 7.01 2.061a12.788 12.788 0 0 0 12.465-9.363a12.822 12.822 0 0 0 .535-3.646Z" />
-            </symbol>
-            <symbol id="youtube" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M23 9.71a8.5 8.5 0 0 0-.91-4.13a2.92 2.92 0 0 0-1.72-1A78.36 78.36 0 0 0 12 4.27a78.45 78.45 0 0 0-8.34.3a2.87 2.87 0 0 0-1.46.74c-.9.83-1 2.25-1.1 3.45a48.29 48.29 0 0 0 0 6.48a3.14 3.14 0 0 0 .71 1.36a2.86 2.86 0 0 0 1.49.78a45.18 45.18 0 0 0 6.5.33c3.5.05 6.57 0 10.2-.28a2.88 2.88 0 0 0 1.53-.78a2.49 2.49 0 0 0 .61-1a10.58 10.58 0 0 0 .52-3.4c.04-.56.04-3.94.04-4.54ZM9.74 14.85V8.66l5.92 3.11c-1.66.92-3.85 1.96-5.92 3.08Z" />
-            </symbol>
-            <symbol id="amazon" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M1.04 17.52q.1-.16.32-.02a21.308 21.308 0 0 0 10.88 2.9a21.524 21.524 0 0 0 7.74-1.46q.56-.22.56-.24a.356.356 0 0 1 .47.12q.17.24-.11.44a14.99 14.99 0 0 1-3.84 1.58A16.175 16.175 0 0 1 12 22a16.017 16.017 0 0 1-10.88-4.16a.273.273 0 0 1-.12-.2a.215.215 0 0 1 .04-.12Z" />
-            </symbol>
-            <symbol id="shopping-bag" viewBox="0 0 24 24">
-                <g fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path
-                        d="M3.864 16.455c-.858-3.432-1.287-5.147-.386-6.301C4.378 9 6.148 9 9.685 9h4.63c3.538 0 5.306 0 6.207 1.154c.901 1.153.472 2.87-.386 6.301c-.546 2.183-.818 3.274-1.632 3.91c-.814.635-1.939.635-4.189.635h-4.63c-2.25 0-3.375 0-4.189-.635c-.814-.636-1.087-1.727-1.632-3.91Z" />
-                    <path
-                        d="m19.5 9.5-.71-2.605c-.274-1.005-.411-1.507-.692-1.886A2.5 2.5 0 0 0 17 4.172C16.56 4 16.04 4 15 4M4.5 9.5l.71-2.605c.274-1.005.411-1.507.692-1.886A2.5 2.5 0 0 1 7 4.172C7.44 4 7.96 4 9 4" />
-                    <path d="M9 4a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1Z" />
-                </g>
-            </symbol>
-            <symbol id="user" viewBox="0 0 24 24">
-                <g fill="none" stroke="currentColor" stroke-width="1.5">
-                    <circle cx="12" cy="9" r="3" />
-                    <circle cx="12" cy="12" r="10" />
-                    <path stroke-linecap="round" d="M17.97 20c-.16-2.892-1.045-5-5.97-5s-5.81 2.108-5.97 5" />
-                </g>
-            </symbol>
-            <symbol id="wishlist" viewBox="0 0 24 24">
-                <g fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path
-                        d="M21 16.09v-4.992c0-4.29 0-6.433-1.318-7.766C18.364 2 16.242 2 12 2C7.757 2 5.636 2 4.318 3.332C3 4.665 3 6.81 3 11.098v4.993c0 3.096 0 4.645.734 5.321c.35.323.792.526 1.263.58c.987.113 2.14-.907 4.445-2.946c1.02-.901 1.529-1.352 2.118-1.47c.29-.06.59-.06.88 0c.59.118 1.099.569 2.118 1.47c2.305 2.039 3.458 3.059 4.445 2.945c.47-.053.913-.256 1.263-.579c.734-.676.734-2.224.734-5.321Z" />
-                    <path stroke-linecap="round" d="M15 6H9" />
-                </g>
-            </symbol>
-            <symbol id="menu" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M2 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0 6.032a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m1 5.033a1 1 0 1 0 0 2h18a1 1 0 0 0 0-2z" />
-            </symbol>
-            <symbol id="trash" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M10 18a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1ZM20 6h-4V5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H4a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2ZM10 5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm7 14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8h10Zm-3-1a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1Z" />
-            </symbol>
-        </defs>
-    </svg>
+  <!-- SVG Sprite (minimal set needed for this page) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <defs>
+      <symbol id="facebook" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M15.12 5.32H17V2.14A26.11 26.11 0 0 0 14.26 2c-2.72 0-4.58 1.66-4.58 4.7v2.62H6.61v3.56h3.07V22h3.68v-9.12h3.06l.46-3.56h-3.52V7.05c0-1.05.28-1.73 1.76-1.73Z" />
+      </symbol>
+      <symbol id="instagram" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M12 6.87A5.13 5.13 0 1 0 17.14 12A5.12 5.12 0 0 0 12 6.87Zm0 8.46A3.33 3.33 0 1 1 15.33 12A3.33 3.33 0 0 1 12 15.33Z" />
+      </symbol>
+      <symbol id="twitter" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M22.991 3.95a1 1 0 0 0-1.51-.86a7.48 7.48 0 0 1-1.874.794a5.152 5.152 0 0 0-3.374-1.242a5.232 5.232 0 0 0-5.223 5.063a11.032 11.032 0 0 1-6.814-3.924a1 1 0 0 0-1.642.135A5.276 5.276 0 0 0 3.311 8.63a5.185 5.185 0 0 0 1.568 3.312a5.204 5.204 0 0 0 2.362 2.922a7.465 7.465 0 0 1-3.59.448A1 1 0 0 0 2.45 19.3a12.942 12.942 0 0 0 7.01 2.061a12.788 12.788 0 0 0 12.465-9.363a12.822 12.822 0 0 0 .535-3.646Z" />
+      </symbol>
+      <symbol id="youtube" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M23 9.71a8.5 8.5 0 0 0-.91-4.13a2.92 2.92 0 0 0-1.72-1A78.36 78.36 0 0 0 12 4.27a78.45 78.45 0 0 0-8.34.3a2.87 2.87 0 0 0-1.46.74c-.9.83-1 2.25-1.1 3.45a48.29 48.29 0 0 0 0 6.48a3.14 3.14 0 0 0 .71 1.36a2.86 2.86 0 0 0 1.49.78a45.18 45.18 0 0 0 6.5.33c3.5.05 6.57 0 10.2-.28a2.88 2.88 0 0 0 1.53-.78a2.49 2.49 0 0 0 .61-1a10.58 10.58 0 0 0 .52-3.4c.04-.56.04-3.94.04-4.54ZM9.74 14.85V8.66l5.92 3.11c-1.66.92-3.85 1.96-5.92 3.08Z" />
+      </symbol>
+      <symbol id="amazon" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M1.04 17.52q.1-.16.32-.02a21.308 21.308 0 0 0 10.88 2.9a21.524 21.524 0 0 0 7.74-1.46q.56-.22.56-.24a.356.356 0 0 1 .47.12q.17.24-.11.44a14.99 14.99 0 0 1-3.84 1.58A16.175 16.175 0 0 1 12 22a16.017 16.017 0 0 1-10.88-4.16a.273.273 0 0 1-.12-.2a.215.215 0 0 1 .04-.12Z" />
+      </symbol>
+      <symbol id="shopping-bag" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.5">
+          <path
+            d="M3.864 16.455c-.858-3.432-1.287-5.147-.386-6.301C4.378 9 6.148 9 9.685 9h4.63c3.538 0 5.306 0 6.207 1.154c.901 1.153.472 2.87-.386 6.301c-.546 2.183-.818 3.274-1.632 3.91c-.814.635-1.939.635-4.189.635h-4.63c-2.25 0-3.375 0-4.189-.635c-.814-.636-1.087-1.727-1.632-3.91Z" />
+          <path
+            d="m19.5 9.5-.71-2.605c-.274-1.005-.411-1.507-.692-1.886A2.5 2.5 0 0 0 17 4.172C16.56 4 16.04 4 15 4M4.5 9.5l.71-2.605c.274-1.005.411-1.507.692-1.886A2.5 2.5 0 0 1 7 4.172C7.44 4 7.96 4 9 4" />
+          <path d="M9 4a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1Z" />
+        </g>
+      </symbol>
+      <symbol id="user" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="9" r="3" />
+          <circle cx="12" cy="12" r="10" />
+          <path stroke-linecap="round" d="M17.97 20c-.16-2.892-1.045-5-5.97-5s-5.81 2.108-5.97 5" />
+        </g>
+      </symbol>
+      <symbol id="wishlist" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.5">
+          <path
+            d="M21 16.09v-4.992c0-4.29 0-6.433-1.318-7.766C18.364 2 16.242 2 12 2C7.757 2 5.636 2 4.318 3.332C3 4.665 3 6.81 3 11.098v4.993c0 3.096 0 4.645.734 5.321c.35.323.792.526 1.263.58c.987.113 2.14-.907 4.445-2.946c1.02-.901 1.529-1.352 2.118-1.47c.29-.06.59-.06.88 0c.59.118 1.099.569 2.118 1.47c2.305 2.039 3.458 3.059 4.445 2.945c.47-.053.913-.256 1.263-.579c.734-.676.734-2.224.734-5.321Z" />
+          <path stroke-linecap="round" d="M15 6H9" />
+        </g>
+      </symbol>
+      <symbol id="menu" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M2 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0 6.032a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m1 5.033a1 1 0 1 0 0 2h18a1 1 0 0 0 0-2z" />
+      </symbol>
+      <symbol id="trash" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M10 18a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1ZM20 6h-4V5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H4a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2ZM10 5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm7 14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8h10Zm-3-1a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1Z" />
+      </symbol>
+    </defs>
+  </svg>
 
-    <!-- Preloader -->
-    <div class="preloader-wrapper">
-        <div class="preloader"></div>
+  <!-- Preloader -->
+  <div class="preloader-wrapper">
+    <div class="preloader"></div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container-fluid">
+      <div class="row py-3 border-bottom">
+
+        <div
+          class="col-sm-4 col-lg-3 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
+          <div class="d-flex align-items-center my-3 my-sm-0">
+            <a href="index.html" class="site-logo">
+              <img src="images/ayushkama-logo.jpg" alt="logo" class="img-fluid">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-3">
+          <div class="search-bar row bg-light p-2 rounded-4">
+            <div class="col-md-4 d-none d-md-block">
+              <select class="form-select border-0 bg-transparent">
+                <option>All Products</option>
+                <option>Immunity &amp; Vitality</option>
+                <option>Functional Flours</option>
+                <option>Seeds &amp; Healthy Fats</option>
+                <option>Wellness Snacks</option>
+                <option>Natural Sweeteners</option>
+                <option>Organic Inputs</option>
+              </select>
+            </div>
+            <div class="col-11 col-md-7">
+              <form class="text-center" action="index.html" method="get">
+                <input type="text" class="form-control border-0 bg-transparent"
+                  placeholder="Search for more than 20,000 products">
+              </form>
+            </div>
+            <div class="col-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <ul
+            class="navbar-nav list-unstyled d-flex flex-row gap-3 gap-lg-5 justify-content-center flex-wrap align-items-center mb-0 fw-bold text-uppercase text-dark">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown"
+                aria-expanded="false">Pages</a>
+              <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
+                <li><a href="about.html" class="dropdown-item">About Us </a></li>
+                <li><a href="cart.html" class="dropdown-item">Cart </a></li>
+                <li><a href="index.html" class="dropdown-item">Blog </a></li>
+                <li><a href="contact.html" class="dropdown-item">Contact </a></li>
+                <li><a href="index.html" class="dropdown-item">My Account </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
+          <ul class="d-flex justify-content-end list-unstyled m-0">
+            <li>
+              <a href="#" class="p-2 mx-1">
+                <svg width="24" height="24">
+                  <use xlink:href="#user"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="p-2 mx-1">
+                <svg width="24" height="24">
+                  <use xlink:href="#wishlist"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="cart.html" class="p-2 mx-1 position-relative" id="cart-icon-link">
+                <svg width="24" height="24">
+                  <use xlink:href="#shopping-bag"></use>
+                </svg>
+                <span id="cart-count"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  style="font-size:0.65rem; display:none;">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </div>
-
-    <!-- ===== HEADER ===== -->
-    <header>
-        <div class="container-fluid">
-            <div class="row py-3 border-bottom">
-
-                <div
-                    class="col-sm-4 col-lg-3 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
-                    <div class="d-flex align-items-center my-3 my-sm-0">
-                        <a href="index.html" class="site-logo">
-                            <img src="images/ayushkama-logo.jpg" alt="logo" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-3">
-                    <div class="search-bar row bg-light p-2 rounded-4">
-                        <div class="col-md-4 d-none d-md-block">
-                            <select class="form-select border-0 bg-transparent">
-                                <option>All Products</option>
-                                <option>Immunity &amp; Vitality</option>
-                                <option>Functional Flours</option>
-                                <option>Seeds &amp; Healthy Fats</option>
-                                <option>Wellness Snacks</option>
-                                <option>Natural Sweeteners</option>
-                                <option>Organic Inputs</option>
-                            </select>
-                        </div>
-                        <div class="col-11 col-md-7">
-                            <form class="text-center" action="index.html" method="get">
-                                <input type="text" class="form-control border-0 bg-transparent"
-                                    placeholder="Search for more than 20,000 products">
-                            </form>
-                        </div>
-                        <div class="col-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <ul
-                        class="navbar-nav list-unstyled d-flex flex-row gap-3 gap-lg-5 justify-content-center flex-wrap align-items-center mb-0 fw-bold text-uppercase text-dark">
-                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown"
-                                aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
-                                <li><a href="about.html" class="dropdown-item">About Us </a></li>
-                                <li><a href="cart.html" class="dropdown-item">Cart </a></li>
-                                <li><a href="index.html" class="dropdown-item">Blog </a></li>
-                                <li><a href="contact.html" class="dropdown-item">Contact </a></li>
-                                <li><a href="index.html" class="dropdown-item">My Account </a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <div
-                    class="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
-                    <ul class="d-flex justify-content-end list-unstyled m-0">
-                        <li>
-                            <a href="#" class="p-2 mx-1">
-                                <svg width="24" height="24">
-                                    <use xlink:href="#user"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="p-2 mx-1">
-                                <svg width="24" height="24">
-                                    <use xlink:href="#wishlist"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="cart.html" class="p-2 mx-1 position-relative" id="cart-icon-link">
-                                <svg width="24" height="24">
-                                    <use xlink:href="#shopping-bag"></use>
-                                </svg>
-                                <span id="cart-count"
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                                    style="font-size:0.65rem; display:none;">0</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </header>
-
-    <!-- ===== HERO BANNER ===== -->
-    <section class="py-5" style="background: linear-gradient(135deg, #eef5e5 0%, #d4edbc 100%);">
-        <div class="container-lg py-3">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <nav aria-label="breadcrumb" class="mb-3">
-                        <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="index.html"
-                                    class="text-decoration-none text-muted">Home</a></li>
-                            <li class="breadcrumb-item active text-dark fw-bold" aria-current="page">Cart</li>
-                        </ol>
-                    </nav>
-                    <h1 class="display-4 fw-bold text-dark mb-1">Your Cart</h1>
-                    <p class="text-muted fs-5 mb-0">Review your selected products before sending your enquiry.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CART CONTENT ===== -->
-    <section class="py-5" style="background-color: var(--bs-primary-bg-subtle);">
-        <div class="container-lg">
-
-            <!-- Empty state -->
-            <div id="cart-empty-msg" class="text-center py-5">
-                <div style="font-size:5rem;">🛒</div>
-                <h3 class="fw-bold mt-3 mb-2">Your cart is empty</h3>
-                <p class="text-muted mb-4">Browse our product catalogue and add items you're interested in.</p>
-                <a href="index.html#product-catalogue"
-                    class="btn btn-primary rounded-pill px-5 py-3 text-uppercase fw-bold">Browse Products</a>
-            </div>
-
-            <!-- Cart table + summary -->
-            <div id="cart-table-wrapper" style="display:none;">
-                <div class="row g-4 align-items-start">
-
-                    <!-- Products table -->
-                    <div class="col-lg-8">
-                        <div class="bg-white rounded-4 shadow-sm overflow-hidden">
-                            <div class="px-4 pt-4 pb-2 border-bottom d-flex justify-content-between align-items-center">
-                                <h5 class="fw-bold mb-0">Selected Products</h5>
-                                <a href="index.html#product-catalogue"
-                                    class="btn-link text-primary text-decoration-none fs-7 fw-semibold">+ Add More</a>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table cart-table mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th class="ps-4">Product</th>
-                                            <th>Quantity</th>
-                                            <th class="text-center">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="cart-items-container">
-                                        <!-- Filled by cart.js -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Summary sidebar -->
-                    <div class="col-lg-4">
-                        <div class="cart-summary-card">
-                            <h5 class="mb-1">Total Items in Cart</h5>
-                            <p class="cart-total-number mb-0" id="cart-total-count">0</p>
-                            <hr style="border-color: rgba(255,255,255,0.2); margin: 20px 0;">
-                            <p style="color: rgba(255,255,255,0.72); font-size: 0.85rem; line-height: 1.7;">
-                                Ready to place your bulk order enquiry? Click below and our export team will get in
-                                touch with you within 24 hours.
-                            </p>
-                            <a href="contact.html" class="btn btn-enquiry mt-2">Send Enquiry →</a>
-                            <a href="index.html#product-catalogue" class="d-block text-center mt-3"
-                                style="color: rgba(255,255,255,0.55); font-size: 0.82rem; text-decoration: none;">
-                                ← Continue Browsing
-                            </a>
-                        </div>
-
-                        <!-- Certifications mini-block -->
-                        <div class="bg-white rounded-4 shadow-sm p-4 mt-4 text-center">
-                            <p class="text-muted fw-semibold mb-2"
-                                style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em;">Certified
-                                &amp; Compliant</p>
-                            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                                <span class="badge rounded-pill px-3 py-2"
-                                    style="background:#eef5e5; color: var(--bs-secondary); font-size:0.75rem;">USDA
-                                    Organic</span>
-                                <span class="badge rounded-pill px-3 py-2"
-                                    style="background:#eef5e5; color: var(--bs-secondary); font-size:0.75rem;">EU
-                                    Organic</span>
-                                <span class="badge rounded-pill px-3 py-2"
-                                    style="background:#eef5e5; color: var(--bs-secondary); font-size:0.75rem;">FSSAI</span>
-                                <span class="badge rounded-pill px-3 py-2"
-                                    style="background:#eef5e5; color: var(--bs-secondary); font-size:0.75rem;">APEDA</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="py-5">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer-menu">
-                        <img src="images/ayushkama-logo.jpg" width="240" height="70" alt="logo">
-                        <div class="social-links mt-3">
-                            <ul class="d-flex list-unstyled gap-2">
-                                <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
-                                            <use xlink:href="#facebook"></use>
-                                        </svg></a></li>
-                                <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
-                                            <use xlink:href="#twitter"></use>
-                                        </svg></a></li>
-                                <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
-                                            <use xlink:href="#youtube"></use>
-                                        </svg></a></li>
-                                <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
-                                            <use xlink:href="#instagram"></use>
-                                        </svg></a></li>
-                                <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
-                                            <use xlink:href="#amazon"></use>
-                                        </svg></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-6">
-                    <div class="footer-menu">
-                        <h5 class="widget-title">Ayushkama</h5>
-                        <ul class="menu-list list-unstyled">
-                            <li class="menu-item"><a href="about.html" class="nav-link">About Us</a></li>
-                            <li class="menu-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                            <li class="menu-item"><a href="#" class="nav-link">Careers</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-6">
-                    <div class="footer-menu">
-                        <h5 class="widget-title">Quick Links</h5>
-                        <ul class="menu-list list-unstyled">
-                            <li class="menu-item"><a href="index.html#product-catalogue" class="nav-link">Catalogue</a>
-                            </li>
-                            <li class="menu-item"><a href="cart.html" class="nav-link">Cart</a></li>
-                            <li class="menu-item"><a href="contact.html" class="nav-link">Export Enquiry</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer-menu">
-                        <h5 class="widget-title">Subscribe Us</h5>
-                        <p>Subscribe to our newsletter to get updates about our latest organic products.</p>
-                        <form class="d-flex mt-3 gap-0" action="index.html">
-                            <input class="form-control rounded-start rounded-0 bg-light" type="email"
-                                placeholder="Email Address" aria-label="Email Address">
-                            <button class="btn btn-dark rounded-end rounded-0" type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div id="footer-bottom">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-md-6 copyright">
-                    <p>© 2024 Ayushkama. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
+  </header>
+  <!-- BREADCRUMB -->
+  <div class="pg-bc">
+    <div class="container-lg">
+      <a href="index.html">Home</a>
+      <span class="mx-2">/</span>
+      <span>Enquiry Cart</span>
     </div>
+  </div>
 
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/cart.js"></script>
+  <!-- PAGE HERO -->
+  <div class="cart-hero">
+    <div class="container-lg">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <h1>Your Enquiry Cart</h1>
+          <p>Review your selected products, specify quantities, and submit your export enquiry.</p>
+        </div>
+        <div class="badge-info">
+          <span class="live-dot"></span>
+          Export team responds within 24 business hours
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART SECTION -->
+  <section class="cart-section">
+    <div class="container-lg">
+
+      <!-- ══ EMPTY STATE (shown when cart is empty) ══ -->
+      <div id="emptyState" class="empty-state" style="display:none;">
+        <span class="empty-icon">🌿</span>
+        <h3>Your enquiry cart is empty</h3>
+        <p>Browse our certified organic superfood catalogue and add products you're interested in sourcing.</p>
+        <a href="index.html#product-catalogue" class="btn-browse">Browse Product Catalogue</a>
+      </div>
+
+      <!-- ══ CART WITH ITEMS (shown when cart has items) ══ -->
+      <div id="cartWithItems">
+        <div class="row g-5 align-items-start">
+
+          <!-- LEFT: CART ITEMS TABLE -->
+          <div class="col-lg-8">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="fw-bold mb-0" style="color:var(--green-dark)">
+                Selected Products <span id="itemCountBadge" class="badge rounded-pill ms-2"
+                  style="background:var(--green-dark);font-size:.75rem;">0</span>
+              </h5>
+              <button onclick="clearCart()"
+                style="background:none;border:none;color:#c0392b;font-size:.82rem;cursor:pointer;text-decoration:underline;">Clear
+                all</button>
+            </div>
+
+
+            <div class="cart-card">
+              <div class="cart-card-header">
+                <h5>Selected Products</h5>
+                <a href="index.html#product-catalogue" class="btn-add-more">+ ADD MORE</a>
+              </div>
+              <div class="table-responsive">
+                <table class="cart-table-v2">
+                  <thead>
+                    <tr>
+                      <th style="width:50%">PRODUCT</th>
+                      <th style="width:25%">QUANTITY</th>
+                      <th style="width:25%">ACTION</th>
+                    </tr>
+                  </thead>
+                  <tbody id="cartTableBody">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+            <!-- Cart actions -->
+            <div class="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2">
+              <a href="index.html#product-catalogue" class="btn btn-outline-secondary rounded-pill px-4 py-2"
+                style="font-size:.85rem;">
+                ← Add More Products
+              </a>
+              <div style="font-size:.8rem;color:var(--text-cart-muted)">
+                💡 Prices not shown — we quote based on quantity, packaging, and destination
+              </div>
+            </div>
+
+            <!-- How it works strip -->
+            <div class="row g-3 mt-4">
+              <div class="col-12">
+                <div
+                  style="background:var(--green-light);border:1px solid var(--green-border);border-radius:12px;padding:1.2rem">
+                  <div
+                    style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-mid);margin-bottom:10px">
+                    How It Works</div>
+                  <div class="row g-3">
+                    <div class="col-md-3 text-center">
+                      <div style="font-size:1.3rem;margin-bottom:4px">1️⃣</div>
+                      <div style="font-size:.78rem;font-weight:700;color:var(--green-dark)">Add products</div>
+                      <div style="font-size:.72rem;color:var(--text-cart-muted)">Select from catalogue</div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                      <div style="font-size:1.3rem;margin-bottom:4px">2️⃣</div>
+                      <div style="font-size:.78rem;font-weight:700;color:var(--green-dark)">Set quantities</div>
+                      <div style="font-size:.72rem;color:var(--text-cart-muted)">Specify kg required</div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                      <div style="font-size:1.3rem;margin-bottom:4px">3️⃣</div>
+                      <div style="font-size:.78rem;font-weight:700;color:var(--green-dark)">Submit enquiry</div>
+                      <div style="font-size:.72rem;color:var(--text-cart-muted)">Fill in your details</div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                      <div style="font-size:1.3rem;margin-bottom:4px">4️⃣</div>
+                      <div style="font-size:.78rem;font-weight:700;color:var(--green-dark)">Get a quote</div>
+                      <div style="font-size:.72rem;color:var(--text-cart-muted)">Within 24 hours</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: SUMMARY + BUYER DETAILS FORM -->
+          <div class="col-lg-4">
+            <div class="summary-card">
+              <h4>Enquiry Summary</h4>
+
+              <div id="summaryRows">
+                <!-- Populated by JS -->
+              </div>
+
+              <div class="summary-note">
+                <strong>No prices shown.</strong> This is a B2B enquiry system. Our export team will send you a
+                personalised quote within 24 business hours including pricing, MOQs, certifications, and shipping
+                options.
+              </div>
+
+              <!-- Buyer details -->
+              <div id="buyerFormWrap">
+                <h6 class="fw-bold mb-3" style="color:var(--green-dark);font-size:.9rem;">Your Details</h6>
+                <form class="buyer-form" id="enquiryForm" onsubmit="submitEnquiry(event)">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" class="form-control" id="buyerName" placeholder="Your full name" required>
+                  <label class="form-label">Company *</label>
+                  <input type="text" class="form-control" id="buyerCompany" placeholder="Company / organisation"
+                    required>
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" class="form-control" id="buyerEmail" placeholder="company@email.com" required>
+                  <label class="form-label">Phone / WhatsApp</label>
+                  <input type="tel" class="form-control" id="buyerPhone" placeholder="+1 / +44 / +971...">
+                  <label class="form-label">Country *</label>
+                  <select class="form-select" id="buyerCountry" required>
+                    <option value="">Select country</option>
+                    <option>United States</option>
+                    <option>United Kingdom</option>
+                    <option>Germany</option>
+                    <option>Netherlands</option>
+                    <option>France</option>
+                    <option>Canada</option>
+                    <option>UAE</option>
+                    <option>Saudi Arabia</option>
+                    <option>Singapore</option>
+                    <option>Australia</option>
+                    <option>Japan</option>
+                    <option>South Korea</option>
+                    <option>Other</option>
+                  </select>
+                  <label class="form-label">Certification Needed</label>
+                  <select class="form-select" id="buyerCert">
+                    <option value="">Not specified</option>
+                    <option>USDA Organic</option>
+                    <option>EU Organic</option>
+                    <option>India Organic (NPOP)</option>
+                    <option>Multiple / discuss</option>
+                  </select>
+                  <label class="form-label">Additional Notes</label>
+                  <textarea class="form-control" id="buyerNotes"
+                    placeholder="Delivery port, packaging preference, or anything else..."></textarea>
+
+                  <button type="submit" class="btn-submit-enquiry" id="submitBtn">
+                    Submit Export Enquiry →
+                  </button>
+                </form>
+
+                <!-- WhatsApp shortcut -->
+                <a id="waLink" href="#" class="btn-wa" target="_blank" rel="noopener">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967c-.273-.099-.471-.148-.67.15c-.197.297-.767.966-.94 1.164c-.173.199-.347.223-.644.075c-.297-.15-1.255-.463-2.39-1.475c-.883-.788-1.48-1.761-1.653-2.059c-.173-.297-.018-.458.13-.606c.134-.133.298-.347.446-.52c.149-.174.198-.298.298-.497c.099-.198.05-.371-.025-.52c-.075-.149-.669-1.612-.916-2.207c-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372c-.272.297-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487c.709.306 1.262.489 1.694.625c.712.227 1.36.195 1.871.118c.571-.085 1.758-.719 2.006-1.413c.248-.694.248-1.289.173-1.413c-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214l-3.741.982l.998-3.648l-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                  </svg>
+                  Send via WhatsApp instead
+                </a>
+              </div>
+
+              <!-- Success message -->
+              <div class="enquiry-success" id="enquirySuccess">
+                <span class="es-icon">✅</span>
+                <h4>Enquiry Submitted!</h4>
+                <p>Thank you — our export team will review your product list and send you a personalised quote within 24
+                  business hours. Check your email inbox.</p>
+              </div>
+
+              <!-- Trust badges -->
+              <div class="trust-row mt-3">
+                <span class="trust-badge">✓ USDA Organic</span>
+                <span class="trust-badge">✓ EU Certified</span>
+                <span class="trust-badge">✓ FSSAI</span>
+                <span class="trust-badge">✓ ISO 22000</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- ══ /CART WITH ITEMS ══ -->
+
+    </div>
+  </section>
+
+  <!-- SUGGESTED PRODUCTS (Swiper carousel) -->
+  <section class="suggested-sec" id="suggestedSec">
+    <div class="container-lg">
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="sec-eyebrow">Frequently Added Together</div>
+          <h2 class="sec-title">You May Also Want to Enquire About</h2>
+        </div>
+      </div>
+      <!-- Swiper -->
+      <div class="swiper suggest-swiper position-relative">
+        <div id="suggestedGrid" class="swiper-wrapper pb-4">
+          <!-- Populated by JS -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEOPLE ALSO LOOKING FOR -->
+  <section class="py-4 bg-white">
+    <div class="container-lg">
+      <h2 class="my-4">People are also looking for</h2>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Lakadong Turmeric</a>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Moringa Powder</a>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Ashwagandha Powder</a>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Amla Powder</a>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Flaxseeds</a>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Sesame Oil</a>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Jaggery Powder</a>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Ragi / Amaranth Flour</a>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Phool Makhana</a>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Raw Forest Honey</a>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Sabja (Basil) Seeds</a>
+      <a href="index.html#product-catalogue" class="btn btn-warning me-2 mb-2">Stevia Leaves</a>
+    </div>
+  </section>
+
+  <script>
+    const MOQ_DATA = {
+      'moringa-leaf-powder': { moq: '100 kg', emoji: '🌿' },
+      'lakadong-turmeric': { moq: '100 kg', emoji: '🟡' },
+      'raw-forest-honey': { moq: '200 kg', emoji: '🍯' },
+      'raw-banana-powder': { moq: '100 kg', emoji: '🍌' },
+      'sattu-roasted-gram-flour': { moq: '200 kg', emoji: '🌾' },
+      'ragi-finger-millet-flour': { moq: '200 kg', emoji: '🌾' },
+      'sesame-seeds': { moq: '500 kg', emoji: '🫙' },
+      'sabja-basil-seeds': { moq: '100 kg', emoji: '🌱' },
+      'flaxseeds-alsi': { moq: '500 kg', emoji: '🟤' },
+      'pumpkin-seeds': { moq: '200 kg', emoji: '🎃' },
+      'amla-powder': { moq: '100 kg', emoji: '🟢' },
+      'ashwagandha-powder': { moq: '100 kg', emoji: '🌿' },
+      'wheatgrass-powder': { moq: '100 kg', emoji: '🌱' },
+      'amaranth-flour': { moq: '200 kg', emoji: '🌾' },
+      'wood-pressed-sesame-oil': { moq: '200 L', emoji: '🫙' },
+      'phool-makhana': { moq: '100 kg', emoji: '⚪' },
+      'roasted-chana': { moq: '200 kg', emoji: '🟡' },
+      'millet-puffs': { moq: '100 kg', emoji: '🌾' },
+      'jaggery-powder': { moq: '500 kg', emoji: '🍬' },
+      'palm-jaggery': { moq: '200 kg', emoji: '🌴' },
+      'stevia-leaves': { moq: '50 kg', emoji: '🌿' },
+    };
+
+    const ALL_PRODUCTS = [
+      { id: 'moringa-leaf-powder', name: 'Moringa Leaf Powder', image: 'images/Moringa-Leaf-Powder.jpg', tag: 'Rich in Antioxidants · Immunity' },
+      { id: 'lakadong-turmeric', name: 'Lakadong Turmeric', image: 'images/Lakadong-Haldi.jpg', tag: '7%+ Curcumin · Bestseller' },
+      { id: 'raw-forest-honey', name: 'Raw Forest Honey', image: 'images/Raw-Forest-Honey.jpg', tag: 'Wild-Harvested · Unprocessed' },
+      { id: 'raw-banana-powder', name: 'Raw Banana Powder', image: 'images/Raw-Banana-Powder.jpg', tag: 'Gut Friendly · Baby Nutrition' },
+      { id: 'sattu-roasted-gram-flour', name: 'Sattu (Roasted Gram Flour)', image: 'images/Sattu-Roasted-Gram-Flour.jpg', tag: 'High Protein · Bestseller' },
+      { id: 'ragi-finger-millet-flour', name: 'Ragi (Finger Millet) Flour', image: 'images/Ragi-Finger-Millet-Flour.jpg', tag: 'High Calcium · Gluten-Free' },
+      { id: 'sesame-seeds', name: 'Sesame Seeds', image: 'images/Sesame-Seeds.jpg', tag: 'Cold Pressed · Unrefined' },
+      { id: 'sabja-basil-seeds', name: 'Sabja (Basil) Seeds', image: 'images/Sabja-Seeds.jpg', tag: 'Cooling · Digestive Superfood' },
+      { id: 'flaxseeds-alsi', name: 'Flaxseeds (Alsi)', image: 'images/Flaxseeds.jpg', tag: 'Rich in Omega-3' },
+      { id: 'pumpkin-seeds', name: 'Pumpkin Seeds', image: 'images/Pumpkin-Seeds.jpg', tag: 'Zinc & Magnesium Rich' },
+      { id: 'amla-powder', name: 'Amla Powder', image: 'images/Amla-Powder.jpg', tag: 'Highest Natural Vitamin C' },
+      { id: 'ashwagandha-powder', name: 'Ashwagandha Powder', image: 'images/Ashwagandha-Powder.jpg', tag: 'Adaptogen · Stress & Energy' },
+      { id: 'wheatgrass-powder', name: 'Wheatgrass Powder', image: 'images/Wheatgrass-Powder.jpg', tag: 'Pure Detox · Daily Greens' },
+      { id: 'amaranth-flour', name: 'Amaranth Flour', image: 'images/Amaranth-Flour.jpg', tag: 'Gluten-Free · Bestseller' },
+      { id: 'wood-pressed-sesame-oil', name: 'Wood-Pressed Sesame Oil', image: 'images/Wood-Pressed-Sesame-Oil.jpg', tag: 'Cold Pressed · Unrefined' },
+      { id: 'phool-makhana', name: 'Phool Makhana', image: 'images/Phool-Makhana.jpg', tag: 'Raw & Roasted' },
+      { id: 'roasted-chana', name: 'Roasted Chana', image: 'images/Roasted-Chana.jpg', tag: 'High Fibre · Organic' },
+      { id: 'millet-puffs', name: 'Millet Puffs', image: 'images/Millet-Puffs.jpg', tag: 'Light · Airy · Bestseller' },
+      { id: 'jaggery-powder', name: 'Jaggery Powder', image: 'images/Jaggery-Powder.jpg', tag: 'Natural Sugar Alternative' },
+      { id: 'palm-jaggery', name: 'Palm Jaggery', image: 'images/Palm-Jaggery.jpg', tag: 'Ayurvedic Natural Sweetener' },
+      { id: 'stevia-leaves', name: 'Stevia Leaves', image: 'images/Stevia-Leaves.jpg', tag: 'Zero Calorie · Natural' },
+    ];
+
+    // ── Cart state ──
+    const CART_KEY = 'ayushkama_cart';
+    let cart = [];
+
+    function loadCart() {
+      try { cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch (e) { cart = []; }
+      // Enrich cart items with product data
+      cart = cart.map(item => {
+        const prod = ALL_PRODUCTS.find(p => p.id === item.id) || {};
+        return { ...prod, ...item, qty: item.qty || 100, pkg: item.pkg || 'Bulk bags (25 kg)' };
+      }).filter(item => item.id && item.name);
+    }
+
+    function saveCart() {
+      localStorage.setItem(CART_KEY, JSON.stringify(
+        cart.map(i => ({ id: i.id, name: i.name, image: i.image, moq: i.moq, qty: i.qty, pkg: i.pkg }))
+      ));
+      if (typeof updateCartBadge === 'function') updateCartBadge();
+    }
+
+
+    function renderCart() {
+      loadCart();
+      const empty = document.getElementById('emptyState');
+      const withItems = document.getElementById('cartWithItems');
+
+      if (cart.length === 0) {
+        if (empty) empty.style.display = 'block';
+        if (withItems) withItems.style.display = 'none';
+        renderSuggested(ALL_PRODUCTS);
+        return;
+      }
+
+      if (empty) empty.style.display = 'none';
+      if (withItems) withItems.style.display = 'block';
+
+      // Table rows
+      const tbody = document.getElementById('cartTableBody');
+      if (tbody) {
+        tbody.innerHTML = cart.map((item, idx) => {
+          const meta = MOQ_DATA[item.id] || { moq: 'Custom Quantity', emoji: '🌿' };
+          return `
+              <tr id="row-${idx}">
+                <td>
+                  <div class="cart-item-info">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-img" onerror="this.src='images/banner-newsletter.jpg'">
+                    <div>
+                      <div class="cart-item-name">${item.name}</div>
+                      <div class="cart-item-moq">MOQ: ${meta.moq}</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="stepper-wrap">
+                    <button class="stepper-btn" onclick="changeQty(${idx}, -1)">–</button>
+                    <input type="text" class="stepper-val" value="${item.qty}" readonly>
+                    <button class="stepper-btn" onclick="changeQty(${idx}, 1)">+</button>
+                  </div>
+                </td>
+                <td>
+                  <button class="btn-remove-lite" onclick="removeItem(${idx})">Remove</button>
+                </td>
+              </tr>`;
+        }).join('');
+      }
+
+      // Summary rows
+      const sumDiv = document.getElementById('summaryRows');
+      if (sumDiv) {
+        sumDiv.innerHTML = cart.map(item =>
+          `<div class="summary-row">
+              <span class="sr-label">${item.name}</span>
+              <span class="sr-value">${item.qty} kg</span>
+            </div>`
+        ).join('') +
+          `<div class="summary-row">
+            <span class="sr-label">Total products</span>
+            <span class="sr-value">${cart.length} SKU${cart.length !== 1 ? 's' : ''}</span>
+          </div>
+          <div class="summary-row">
+            <span class="sr-label">Pricing</span>
+            <span class="sr-value" style="color:var(--green-mid)">Quote on request</span>
+          </div>`;
+      }
+
+      // WhatsApp link
+      const waLink = document.getElementById('waLink');
+      if (waLink) {
+        const waMsg = 'Hello Ayushkama, I am interested in the following products:\n\n' +
+          cart.map(i => `• ${i.name} — ${i.qty} kg`).join('\n') +
+          '\n\nPlease send me pricing and availability.';
+        waLink.href = 'https://wa.me/919876543210?text=' + encodeURIComponent(waMsg);
+      }
+
+      // Suggested – show ALL products in the carousel
+      renderSuggested(ALL_PRODUCTS);
+
+      // Update badge
+      const ib = document.getElementById('itemCountBadge');
+      if (ib) ib.textContent = cart.length;
+    }
+
+    function changeQty(idx, delta) {
+      let current = parseInt(cart[idx].qty) || 100;
+      let newVal = Math.max(1, current + delta);
+      cart[idx].qty = newVal;
+      saveCart();
+      renderCart();
+    }
+
+    function updateQty(idx, val) { cart[idx].qty = parseInt(val) || 100; saveCart(); renderCart(); }
+    function updatePkg(idx, val) { cart[idx].pkg = val; saveCart(); }
+
+    function removeItem(idx) {
+      cart.splice(idx, 1);
+      saveCart();
+      renderCart();
+    }
+
+    function clearCart() {
+      if (confirm('Remove all items from your enquiry cart?')) {
+        cart = [];
+        saveCart();
+        renderCart();
+      }
+    }
+
+    let suggestSwiper = null;
+
+    function renderSuggested(items) {
+      const grid = document.getElementById('suggestedGrid');
+      const sec = document.getElementById('suggestedSec');
+      if (!items || !items.length) { if (sec) sec.style.display = 'none'; return; }
+      if (sec) sec.style.display = 'block';
+      if (grid) {
+        if (suggestSwiper) { try { suggestSwiper.destroy(true, true); } catch (e) { } suggestSwiper = null; }
+
+        grid.innerHTML = items.map(p => `
+            <div class="swiper-slide">
+              <div class="suggest-card" style="background:#fff;border:1px solid #eee;border-radius:14px;overflow:hidden;height:100%;transition:box-shadow .2s,transform .2s;">
+                <img src="${p.image}" alt="${p.name}"
+                     style="width:100%;height:180px;object-fit:cover;"
+                     onerror="this.src='images/banner-newsletter.jpg'">
+                <div style="padding:14px 16px;">
+                  <p style="color:#4a8c3a;font-size:.72rem;font-weight:700;margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em;">${p.tag || ''}</p>
+                  <h6 style="font-weight:700;color:#222;font-size:.9rem;margin-bottom:4px;line-height:1.3;">${p.name}</h6>
+                  <p style="font-size:.74rem;color:#999;margin-bottom:12px;">&#8853; Origin: India &nbsp;&nbsp; &#8853; MOQ: Custom Quantity</p>
+                  <button class="btn-add-enquiry" onclick="addSuggested('${p.id}')">+ Add to Enquiry</button>
+                </div>
+              </div>
+            </div>`).join('');
+
+        suggestSwiper = new Swiper('.suggest-swiper', {
+          slidesPerView: 1.2,
+          spaceBetween: 20,
+          loop: true,
+          speed: 400,
+          autoplay: { delay: 1100, disableOnInteraction: false, pauseOnMouseEnter: true },
+          pagination: { el: '.suggest-swiper .swiper-pagination', clickable: true },
+          navigation: { nextEl: '.suggest-swiper .swiper-button-next', prevEl: '.suggest-swiper .swiper-button-prev' },
+          breakpoints: {
+            480: { slidesPerView: 2, spaceBetween: 16 },
+            768: { slidesPerView: 3, spaceBetween: 20 },
+            1024: { slidesPerView: 4, spaceBetween: 24 },
+            1280: { slidesPerView: 5, spaceBetween: 24 }
+          }
+        });
+      }
+    }
+
+    function addSuggested(id) {
+      const prod = ALL_PRODUCTS.find(p => p.id === id);
+      if (!prod) return;
+      if (!cart.find(i => i.id === id)) {
+        cart.push({ ...prod, qty: 100, pkg: 'Bulk bags (25 kg)' });
+        saveCart();
+        renderCart();
+      }
+    }
+
+    function submitEnquiry(e) {
+      e.preventDefault();
+      const form = document.getElementById('buyerFormWrap');
+      const success = document.getElementById('enquirySuccess');
+      if (form) form.style.display = 'none';
+      if (success) success.style.display = 'block';
+      // Clear cart after submission
+      cart = [];
+      saveCart();
+      if (typeof updateCartBadge === 'function') updateCartBadge();
+    }
+
+    // Boot
+    document.addEventListener('DOMContentLoaded', function () {
+      renderCart();
+    });
+  </script>
+  <footer class="py-5">
+    <div class="container-lg">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="footer-menu">
+            <img src="images/ayushkama-logo.jpg" width="240" height="70" alt="logo">
+            <div class="social-links mt-3">
+              <ul class="d-flex list-unstyled gap-2">
+                <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
+                      <use xlink:href="#facebook"></use>
+                    </svg></a></li>
+                <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
+                      <use xlink:href="#twitter"></use>
+                    </svg></a></li>
+                <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
+                      <use xlink:href="#youtube"></use>
+                    </svg></a></li>
+                <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
+                      <use xlink:href="#instagram"></use>
+                    </svg></a></li>
+                <li><a href="#" class="btn btn-outline-light"><svg width="16" height="16">
+                      <use xlink:href="#amazon"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="footer-menu">
+            <h5 class="widget-title">Ayushkama</h5>
+            <ul class="menu-list list-unstyled">
+              <li class="menu-item"><a href="about.html" class="nav-link">About Us</a></li>
+              <li class="menu-item"><a href="contact.html" class="nav-link">Contact</a></li>
+              <li class="menu-item"><a href="#" class="nav-link">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="footer-menu">
+            <h5 class="widget-title">Quick Links</h5>
+            <ul class="menu-list list-unstyled">
+              <li class="menu-item"><a href="index.html#product-catalogue" class="nav-link">Catalogue</a>
+              </li>
+              <li class="menu-item"><a href="cart.html" class="nav-link">Cart</a></li>
+              <li class="menu-item"><a href="contact.html" class="nav-link">Export Enquiry</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="footer-menu">
+            <h5 class="widget-title">Subscribe Us</h5>
+            <p>Subscribe to our newsletter to get updates about our latest organic products.</p>
+            <form class="d-flex mt-3 gap-0" action="index.html">
+              <input class="form-control rounded-start rounded-0 bg-light" type="email" placeholder="Email Address"
+                aria-label="Email Address">
+              <button class="btn btn-dark rounded-end rounded-0" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="footer-bottom">
+    <div class="container-lg">
+      <div class="row">
+        <div class="col-md-6 copyright">
+          <p>© 2024 Ayushkama. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
 
 </body>
 
