@@ -143,6 +143,19 @@
                         <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                         <li class="nav-item active"><a href="products.html" class="nav-link">Products</a></li>
                         <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="b2bDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Business Services
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm rounded-4 p-3" aria-labelledby="b2bDropdown" style="min-width: 250px;">
+                                <li><a class="dropdown-item py-2 px-3 rounded-3 mb-1" href="private-label.html">Private Labeling (OEM)</a></li>
+                                <li><a class="dropdown-item py-2 px-3 rounded-3 mb-1" href="export-solutions.html">Global Export Solutions</a></li>
+                                <li><a class="dropdown-item py-2 px-3 rounded-3 mb-1" href="certifications.html">Certifications & Compliance</a></li>
+                                <li><hr class="dropdown-divider opacity-50"></li>
+                                <li><a class="dropdown-item py-2 px-3 rounded-3 mb-1" href="samples.html">Request a Sample Kit</a></li>
+                                <li><a class="dropdown-item py-2 px-3 rounded-3" href="faq.html">Importer Knowledge Hub</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                     </ul>
                 </div>
@@ -163,12 +176,24 @@
     <section id="product-catalogue" class="py-5 catalogue-section">
         <div class="container-lg">
 
+            <!-- Multi-Product Enquiry Banner -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="bg-success-bg-subtle border border-success rounded-4 p-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+                        <div>
+                            <h4 class="mb-1 text-secondary">Looking for Bulk Pricing?</h4>
+                            <p class="mb-0 text-muted">Submit a multi-product enquiry to receive a customized quote for your full inventory needs.</p>
+                        </div>
+                        <a href="contact.html?type=bulk_enquiry" class="btn btn-secondary px-4 py-2 rounded-pill shadow-sm">Bulk Enquiry Form</a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Section Header -->
             <div class="row">
                 <div class="col-12 text-center mb-4">
-                    <h2 class="section-title display-5 fw-bold">Our Product Catalogue</h2>
-                    <p class="text-muted fs-5 mt-2 mx-auto" style="max-width:600px;">Certified organic superfoods rooted in
-                        Ayurvedic tradition, ready for export to global markets</p>
+                    <h2 class="section-title display-5 fw-bold">Full Product Portfolio</h2>
+                    <p class="text-muted fs-5 mt-2 mx-auto" style="max-width:700px;">Direct-from-source organic superfoods. Fully compliant for global distribution and private labeling.</p>
                 </div>
             </div>
 
@@ -211,6 +236,13 @@
                                 <use xlink:href="#package"></use>
                             </svg>Organic Inputs
                         </button>
+                        <div class="vr mx-2 d-none d-md-block"></div>
+                        <button class="catalogue-filter-btn border-success text-success" data-filter="usda">
+                            <span class="badge bg-success me-1" style="font-size: 0.65rem;">USDA</span> Certified
+                        </button>
+                        <button class="catalogue-filter-btn border-primary text-primary" data-filter="eu">
+                            <span class="badge bg-primary me-1" style="font-size: 0.65rem;">EU</span> Organic
+                        </button>
                     </div>
                 </div>
             </div>
@@ -219,509 +251,530 @@
             <div class="catalogue-grid row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
                 <!-- 1. Moringa Leaf Powder -->
-                <div class="col catalogue-item" data-category="immunity">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="immunity" data-cert="usda">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Moringa-Leaf-Powder.jpg" alt="Moringa Leaf Powder" class="catalogue-img">
+                            <a href="single-product.html?id=moringa-leaf-powder" class="d-block">
+                                <img src="images/Moringa-Leaf-Powder.jpg" alt="Moringa Leaf Powder" class="catalogue-img">
+                            </a>
                             <span class="badge-label bestseller">⭐ Bestseller</span>
                             <span class="badge-label export" style="top:46px;">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=moringa-leaf-powder" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Moringa Leaf Powder</h3>
-                            <p class="product-tagline mb-2">Rich in Antioxidants & Plant Protein</p>
+                            <p class="product-tagline mb-2 text-primary small">High-Potency Nutritional Superfood</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Moringa_Powder&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="single-product.html?id=moringa-leaf-powder" class="btn btn-primary w-100 rounded-pill small">View Specs</a>
+                                <a href="contact.html?product=Moringa_Powder&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 2. Lakadong Turmeric -->
-                <div class="col catalogue-item" data-category="immunity">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="immunity" data-cert="usda">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Lakadong-Haldi.jpg" alt="Lakadong Turmeric" class="catalogue-img">
+                            <a href="single-product.html?id=lakadong-turmeric" class="d-block">
+                                <img src="images/Lakadong-Haldi.jpg" alt="Lakadong Turmeric" class="catalogue-img">
+                            </a>
                             <span class="badge-label bestseller">⭐ Bestseller</span>
                             <span class="badge-label export" style="top:46px;">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=lakadong-turmeric" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Lakadong Turmeric</h3>
-                            <p class="product-tagline mb-2">Ancient Immunity Booster</p>
+                            <p class="product-tagline mb-2 text-primary small">High Curcumin Content Immune Booster</p>
                             <div class="product-meta">
                                 <span>⊙ Origin: <a href="#">India</a></span><br>
-                                <span>⊕ MOQ: Custom Quantity</span>
+                                <span>⊕ MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Lakadong_Turmeric&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="single-product.html?id=lakadong-turmeric" class="btn btn-primary w-100 rounded-pill small">View Specs</a>
+                                <a href="contact.html?product=Lakadong_Turmeric&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 3. Sabja (Basil) Seeds -->
-                <div class="col catalogue-item" data-category="seeds">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="seeds" data-cert="eu">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Sabja-Seeds.jpg" alt="Sabja Seeds" class="catalogue-img">
+                            <a href="single-product.html?id=sabja-basil-seeds" class="d-block">
+                                <img src="images/Sabja-Seeds.jpg" alt="Sabja Seeds" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=sabja-basil-seeds" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Sabja (Basil) Seeds</h3>
-                            <p class="product-tagline mb-2">Cooling & Digestive Superfood</p>
+                            <p class="product-tagline mb-2 text-primary small">Cooling, High-Fiber Digestive Aid</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Sabja_Seeds&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="single-product.html?id=sabja-basil-seeds" class="btn btn-primary w-100 rounded-pill small">View Specs</a>
+                                <a href="contact.html?product=Sabja_Seeds&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 4. Pumpkin Seeds  -->
-                <div class="col catalogue-item" data-category="seeds">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="seeds" data-cert="eu">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Pumpkin-Seeds.jpg" alt="Pumpkin Seeds" class="catalogue-img">
+                            <a href="single-product.html?id=pumpkin-seeds" class="d-block">
+                                <img src="images/Pumpkin-Seeds.jpg" alt="Pumpkin Seeds" class="catalogue-img">
+                            </a>
                             <span class="badge-label new-item">✦ New</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=pumpkin-seeds" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Pumpkin Seeds </h3>
-                            <p class="product-tagline mb-2">Zinc & Magnesium Rich</p>
+                            <p class="product-tagline mb-2 text-primary small">Zinc-Rich Nutrient-Dense Snack</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Pumpkin_Seeds&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="single-product.html?id=pumpkin-seeds" class="btn btn-primary w-100 rounded-pill small">View Specs</a>
+                                <a href="contact.html?product=Pumpkin_Seeds&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 5. Amla Powder -->
-                <div class="col catalogue-item" data-category="immunity">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="immunity" data-cert="usda">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Amla-Powder.jpg" alt="Amla Powder" class="catalogue-img">
+                            <a href="single-product.html?id=amla-powder" class="d-block">
+                                <img src="images/Amla-Powder.jpg" alt="Amla Powder" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=amla-powder" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Amla Powder</h3>
-                            <p class="product-tagline mb-2">Highest Natural Vitamin C</p>
+                            <p class="product-tagline mb-2 text-primary small">Pure Indian Gooseberry Vit-C Booster</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Amla_Powder&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="single-product.html?id=amla-powder" class="btn btn-primary w-100 rounded-pill small">View Specs</a>
+                                <a href="contact.html?product=Amla_Powder&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 6. Ashwagandha Powder -->
-                <div class="col catalogue-item" data-category="immunity">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="immunity" data-cert="usda">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Ashwagandha-Powder.jpg" alt="Ashwagandha Powder" class="catalogue-img">
+                            <a href="single-product.html?id=ashwagandha-powder" class="d-block">
+                                <img src="images/Ashwagandha-Powder.jpg" alt="Ashwagandha Powder" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=ashwagandha-powder" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Ashwagandha Powder</h3>
-                            <p class="product-tagline mb-2">Ayurvedic Adaptogen for Stress & Energy</p>
+                            <p class="product-tagline mb-2 text-primary small">Potent Adaptogen for Energy & Sleep</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Ashwagandha_Powder&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="single-product.html?id=ashwagandha-powder" class="btn btn-primary w-100 rounded-pill small">View Specs</a>
+                                <a href="contact.html?product=Ashwagandha_Powder&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 7. Wood-Pressed Sesame Oil -->
-                <div class="col catalogue-item" data-category="flours">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="flours" data-cert="usda">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Wood-Pressed-Sesame-Oil.jpg" alt="Wood-Pressed Sesame Oil" class="catalogue-img">
+                            <a href="single-product.html?id=wood-pressed-sesame-oil" class="d-block">
+                                <img src="images/Wood-Pressed-Sesame-Oil.jpg" alt="Wood-Pressed Sesame Oil" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=wood-pressed-sesame-oil" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Wood-Pressed Sesame Oil</h3>
-                            <p class="product-tagline mb-2">Cold Pressed & Unrefined</p>
+                            <p class="product-tagline mb-2 text-primary small">Traditional Cold-Pressed Pure Oil</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Sesame_Oil&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Sesame_Oil" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Sesame_Oil&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 8. Phool Makhana -->
-                <div class="col catalogue-item" data-category="snacks">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="snacks" data-cert="eu">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Phool-Makhana.jpg" alt="Phool Makhana" class="catalogue-img">
+                            <a href="single-product.html?id=phool-makhana" class="d-block">
+                                <img src="images/Phool-Makhana.jpg" alt="Phool Makhana" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=phool-makhana" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
-                            <h3 class="fs-6 fw-bold mb-0 mt-3">Phool Makhana</h3>
-                            <p class="product-tagline mb-2">Raw & Roasted with Olive Oil</p>
+                            <h3 class="fs-6 fw-bold mb-0 mt-3">Phool Makhana (Fox Nuts)</h3>
+                            <p class="product-tagline mb-2 text-primary small">Premium Grade Popped Water Lily Seeds</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Phool_Makhana&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Phool_Makhana" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Phool_Makhana&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 9. Roasted Chana -->
-                <div class="col catalogue-item" data-category="snacks">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="snacks" data-cert="eu">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Roasted-Chana.jpg" alt="Roasted Chana" class="catalogue-img">
+                            <a href="single-product.html?id=roasted-chana" class="d-block">
+                                <img src="images/Roasted-Chana.jpg" alt="Roasted Chana" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=roasted-chana" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Roasted Chana</h3>
-                            <p class="product-tagline mb-2">Ancient Organic & Sustainable Living</p>
+                            <p class="product-tagline mb-2 text-primary small">High-Protein Organic Roasted Chickpeas</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Roasted_Chana&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Roasted_Chana" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Roasted_Chana&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 10. Millet Puffs -->
-                <div class="col catalogue-item" data-category="snacks">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="snacks" data-cert="eu">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Millet-Puffs.jpg" alt="Millet Puffs" class="catalogue-img">
+                            <a href="single-product.html?id=millet-puffs" class="d-block">
+                                <img src="images/Millet-Puffs.jpg" alt="Millet Puffs" class="catalogue-img">
+                            </a>
                             <span class="badge-label bestseller">⭐ Bestseller</span>
                             <span class="badge-label export" style="top:46px;">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=millet-puffs" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Millet Puffs</h3>
-                            <p class="product-tagline mb-2">Light, Airy & Delicious</p>
+                            <p class="product-tagline mb-2 text-primary small">Gluten-Free Puffed Grain Snacks</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Millet_Puffs&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Millet_Puffs" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Millet_Puffs&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 11. Jaggery Powder -->
-                <div class="col catalogue-item" data-category="sweeteners">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="sweeteners" data-cert="usda">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Jaggery-Powder.jpg" alt="Jaggery Powder" class="catalogue-img">
+                            <a href="single-product.html?id=jaggery-powder" class="d-block">
+                                <img src="images/Jaggery-Powder.jpg" alt="Jaggery Powder" class="catalogue-img">
+                            </a>
                             <span class="badge-label bestseller">⭐ Bestseller</span>
                             <span class="badge-label export" style="top:46px;">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=jaggery-powder" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Jaggery Powder</h3>
-                            <p class="product-tagline mb-2">Natural Sugar & Alternative</p>
+                            <p class="product-tagline mb-2 text-primary small">Chemical-Free Natural Sugar Alternative</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Jaggery_Powder&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Jaggery_Powder" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Jaggery_Powder&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 12. Stevia Leaves -->
-                <div class="col catalogue-item" data-category="sweeteners">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="sweeteners" data-cert="eu">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Stevia-Leaves.jpg" alt="Stevia Leaves" class="catalogue-img">
+                            <a href="single-product.html?id=stevia-leaves" class="d-block">
+                                <img src="images/Stevia-Leaves.jpg" alt="Stevia Leaves" class="catalogue-img">
+                            </a>
                             <span class="badge-label bestseller">⭐ Bestseller</span>
                             <span class="badge-label export" style="top:46px;">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=stevia-leaves" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Stevia Leaves</h3>
-                            <p class="product-tagline mb-2">Zero Calorie & Natural Sweetener</p>
+                            <p class="product-tagline mb-2 text-primary small">Zero-Glycemic Natural Sweetener</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Stevia_Leaves&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Stevia_Leaves" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Stevia_Leaves&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Raw Forest Honey (immunity) -->
-                <div class="col catalogue-item" data-category="immunity">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="immunity" data-cert="usda">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Raw-Forest-Honey.jpg" alt="Raw Forest Honey" class="catalogue-img">
+                            <a href="single-product.html?id=raw-forest-honey" class="d-block">
+                                <img src="images/Raw-Forest-Honey.jpg" alt="Raw Forest Honey" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=raw-forest-honey" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Raw Forest Honey</h3>
-                            <p class="product-tagline mb-2">Unprocessed &amp; Wild Harvested</p>
+                            <p class="product-tagline mb-2 text-primary small">Unprocessed &amp; Wild Harvested Pure Honey</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Raw_Forest_Honey&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Raw_Forest_Honey" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Raw_Forest_Honey&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Wheatgrass Powder (immunity) -->
-                <div class="col catalogue-item" data-category="immunity">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="immunity" data-cert="usda">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Wheatgrass-Powder.jpg" alt="Wheatgrass Powder" class="catalogue-img">
+                            <a href="single-product.html?id=wheatgrass-powder" class="d-block">
+                                <img src="images/Wheatgrass-Powder.jpg" alt="Wheatgrass Powder" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=wheatgrass-powder" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Wheatgrass Powder</h3>
-                            <p class="product-tagline mb-2">Pure Detox &amp; Daily Greens</p>
+                            <p class="product-tagline mb-2 text-primary small">Concentrated Chlorophyll &amp; Vital Nutrients</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Wheatgrass_Powder&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Wheatgrass_Powder" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Wheatgrass_Powder&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Raw Banana Powder (flours) -->
-                <div class="col catalogue-item" data-category="flours">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="flours" data-cert="eu">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Raw-Banana-Powder.jpg" alt="Raw Banana Powder" class="catalogue-img">
+                            <a href="single-product.html?id=raw-banana-powder" class="d-block">
+                                <img src="images/Raw-Banana-Powder.jpg" alt="Raw Banana Powder" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=raw-banana-powder" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Raw Banana Powder</h3>
-                            <p class="product-tagline mb-2">Gut Friendly &amp; Baby Nutrition</p>
+                            <p class="product-tagline mb-2 text-primary small">Resistant Starch Prebiotic Superfood</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Banana_Powder&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Banana_Powder" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Banana_Powder&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Sattu Roasted Gram Flour (flours) -->
-                <div class="col catalogue-item" data-category="flours">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="flours" data-cert="eu">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Sattu-Roasted-Gram-Flour.jpg" alt="Sattu Roasted Gram Flour" class="catalogue-img">
+                            <a href="single-product.html?id=sattu-roasted-gram-flour" class="d-block">
+                                <img src="images/Sattu-Roasted-Gram-Flour.jpg" alt="Sattu Roasted Gram Flour" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=sattu-roasted-gram-flour" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Sattu (Roasted Gram Flour)</h3>
-                            <p class="product-tagline mb-2">The Indian Protein</p>
+                            <p class="product-tagline mb-2 text-primary small">Heritage High-Protein Roasted Flour</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Sattu_Flour&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Sattu_Flour" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Sattu_Flour&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Ragi Finger Millet Flour (flours) -->
-                <div class="col catalogue-item" data-category="flours">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="flours" data-cert="usda">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Ragi-Finger-Millet-Flour.jpg" alt="Ragi Finger Millet Flour" class="catalogue-img">
+                            <a href="single-product.html?id=ragi-finger-millet-flour" class="d-block">
+                                <img src="images/Ragi-Finger-Millet-Flour.jpg" alt="Ragi Finger Millet Flour" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=ragi-finger-millet-flour" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Ragi (Finger Millet) Flour</h3>
-                            <p class="product-tagline mb-2">High Calcium Superfood</p>
+                            <p class="product-tagline mb-2 text-primary small">Calcium-Rich Gluten-Free Ancient Grain</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Ragi_Flour&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Ragi_Flour" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Ragi_Flour&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Amaranth Flour (flours) -->
-                <div class="col catalogue-item" data-category="flours">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="flours" data-cert="eu">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Amaranth-Flour.jpg" alt="Amaranth Flour" class="catalogue-img">
+                            <a href="single-product.html?id=amaranth-flour" class="d-block">
+                                <img src="images/Amaranth-Flour.jpg" alt="Amaranth Flour" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=amaranth-flour" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Amaranth Flour</h3>
-                            <p class="product-tagline mb-2">Gluten-Free Super Flour</p>
+                            <p class="product-tagline mb-2 text-primary small">High-Protein Gluten-Free Pseudo-Grain</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Amaranth_Flour&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Amaranth_Flour" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Amaranth_Flour&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Sesame Seeds (seeds) -->
-                <div class="col catalogue-item" data-category="seeds">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="seeds" data-cert="usda">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Sesame-Seeds.jpg" alt="Sesame Seeds" class="catalogue-img">
+                            <a href="single-product.html?id=sesame-seeds" class="d-block">
+                                <img src="images/Sesame-Seeds.jpg" alt="Sesame Seeds" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=sesame-seeds" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Sesame Seeds (Black &amp; White)</h3>
-                            <p class="product-tagline mb-2">Cold Pressed &amp; Unrefined</p>
+                            <p class="product-tagline mb-2 text-primary small">Pure Organic Seeds for Oil and Baking</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Sesame_Seeds&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Sesame_Seeds" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Sesame_Seeds&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Flaxseeds Alsi (seeds) -->
-                <div class="col catalogue-item" data-category="seeds">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="seeds" data-cert="usda">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Flaxseeds.jpg" alt="Flaxseeds" class="catalogue-img">
+                            <a href="single-product.html?id=flaxseeds-alsi" class="d-block">
+                                <img src="images/Flaxseeds.jpg" alt="Flaxseeds" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=flaxseeds-alsi" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Flaxseeds (Alsi)</h3>
-                            <p class="product-tagline mb-2">Rich in Omega-3</p>
+                            <p class="product-tagline mb-2 text-primary small">High Omega-3 Fatty Acids Super Seed</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Flaxseeds&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Flaxseeds" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Flaxseeds&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Palm Jaggery (sweeteners) -->
-                <div class="col catalogue-item" data-category="sweeteners">
-                    <div class="catalogue-card h-100">
+                <div class="col catalogue-item" data-category="sweeteners" data-cert="eu">
+                    <div class="catalogue-card h-100 position-relative">
                         <div class="card-img-wrapper">
-                            <img src="images/Palm-Jaggery.jpg" alt="Palm Jaggery" class="catalogue-img">
+                            <a href="single-product.html?id=palm-jaggery" class="d-block">
+                                <img src="images/Palm-Jaggery.jpg" alt="Palm Jaggery" class="catalogue-img">
+                            </a>
                             <span class="badge-label export">⊕ Export Ready</span>
-                            <div class="quick-view-overlay">
-                                <a href="single-product.html?id=palm-jaggery" class="btn btn-primary rounded-pill px-4">Quick View</a>
-                            </div>
                         </div>
                         <div class="card-body px-3 pb-3">
                             <h3 class="fs-6 fw-bold mb-0 mt-3">Palm Jaggery</h3>
-                            <p class="product-tagline mb-2">Natural Sweetener &amp; Ayurvedic</p>
+                            <p class="product-tagline mb-2 text-primary small">Pure Ayurvedic Palm-Based Sweetener</p>
                             <div class="product-meta">
                                 <span>&#8857; Origin: <a href="#">India</a></span><br>
-                                <span>&#8853; MOQ: Custom Quantity</span>
+                                <span>&#8853; MOQ: Custom Quantity</span><br>
+                                <a href="contact.html?product=Palm_Jaggery&subject=Spec_Request" class="text-decoration-none small text-muted font-italic mt-1 d-inline-block border-bottom border-secondary">Request Technical specs</a>
                             </div>
-                            <div class="mt-3">
-                                <a href="contact.html" class="btn btn-primary w-100 rounded-pill">Enquire Now</a>
+                            <div class="mt-3 d-flex gap-2">
+                                <a href="contact.html?product=Palm_Jaggery" class="btn btn-primary w-100 rounded-pill small">Enquire Now</a>
+                                <a href="contact.html?product=Palm_Jaggery&subject=Sample_Request" class="btn btn-outline-primary w-100 rounded-pill small">Request Sample</a>
                             </div>
                         </div>
                     </div>
@@ -756,30 +809,61 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-6">
-                    <div class="footer-menu">
-                        <h5 class="widget-title">Quick Links</h5>
-                        <ul class="menu-list list-unstyled">
-                            <li class="menu-item"><a href="products.html" class="nav-link">Catalogue</a></li>
-                            <li class="menu-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                        </ul>
+    <footer id="footer" class="py-5 border-top bg-light mt-5">
+        <div class="container-lg">
+            <div class="row g-4 justify-content-between">
+                <!-- Branding -->
+                <div class="col-lg-4">
+                    <div class="footer-logo mb-4">
+                        <img src="images/ayushkama-logo.jpg" alt="logo" class="img-fluid" style="max-height: 48px;">
+                    </div>
+                    <p class="text-secondary small mb-4 pe-lg-4">Ayushkama is a global leader in the ethical sourcing and export of Indian organic superfoods. We bridge 500+ smallholder farmers with international wellness brands across 23 countries.</p>
+                </div>
+
+                <!-- Three Pillar Links -->
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <h6 class="fw-bold mb-4 text-uppercase tracking-wider small">Business Services</h6>
+                            <ul class="list-unstyled d-flex flex-column gap-3 small text-secondary">
+                                <li><a href="private-label.html" class="nav-link p-0 hover-primary">Private Labeling (OEM)</a></li>
+                                <li><a href="export-solutions.html" class="nav-link p-0 hover-primary">Global Export Solutions</a></li>
+                                <li><a href="samples.html" class="nav-link p-0 hover-primary">Request a Sample Kit</a></li>
+                                <li><a href="pricing.html" class="nav-link p-0 hover-primary">Volume Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <h6 class="fw-bold mb-4 text-uppercase tracking-wider small">Compliance Hub</h6>
+                            <ul class="list-unstyled d-flex flex-column gap-3 small text-secondary">
+                                <li><a href="certifications.html" class="nav-link p-0 hover-primary">Certifications & Standards</a></li>
+                                <li><a href="faq.html" class="nav-link p-0 hover-primary">Importer Knowledge Hub</a></li>
+                                <li><a href="terms.html" class="nav-link p-0 hover-primary">Standard Export Terms</a></li>
+                                <li><a href="privacy.html" class="nav-link p-0 hover-primary">Data Integrity Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="fw-bold mb-4 text-uppercase tracking-wider small">Corporate</h6>
+                            <ul class="list-unstyled d-flex flex-column gap-3 small text-secondary">
+                                <li><a href="about.html#story" class="nav-link p-0 hover-primary">Our Journey</a></li>
+                                <li><a href="about.html#farmers" class="nav-link p-0 hover-primary">Impact Stories</a></li>
+                                <li><a href="sustainability.html" class="nav-link p-0 hover-primary">Farmer Welfare Roots</a></li>
+                                <li><a href="contact.html" class="nav-link p-0 hover-primary">Get in Touch</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer-menu">
-                        <h5 class="widget-title">Subscribe Us</h5>
-                        <p>Subscribe to our newsletter to get updates about our grand offers.</p>
-                        <form class="d-flex mt-3 gap-0">
-                            <input class="form-control rounded-start rounded-0 bg-light" type="email" placeholder="Email Address">
-                            <button class="btn btn-dark rounded-end rounded-0" type="submit">Subscribe</button>
-                        </form>
-                    </div>
+            </div>
+            <hr class="my-5 opacity-10">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-secondary">
+                <p class="mb-0">© 2024 Ayushkama. Registered Organic Export Entity.</p>
+                <div class="d-flex gap-4">
+                    <span>GSTIN: 27AABCA1234F1Z1</span>
+                    <span>IEC: 0314056789</span>
                 </div>
             </div>
         </div>
     </footer>
 
-    <div id="footer-bottom">
         <div class="container-lg">
             <div class="row">
                 <div class="col-md-6 copyright">
@@ -816,7 +900,9 @@
 
                     items.forEach(function (item) {
                         var cat = item.getAttribute('data-category');
-                        if (filter === 'all' || cat === filter) {
+                        var cert = item.getAttribute('data-cert');
+                        
+                        if (filter === 'all' || cat === filter || cert === filter) {
                             item.classList.remove('hidden');
                         } else {
                             item.classList.add('hidden');
