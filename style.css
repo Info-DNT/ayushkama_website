@@ -823,15 +823,29 @@ a.btn-link.text-light:after {
 .card-img-wrapper {
   position: relative;
   overflow: hidden;
+  height: 260px;
+  flex-shrink: 0;
+}
+
+/* anchor tag around image on products.html — stretch to fill wrapper */
+.card-img-wrapper > a,
+.card-img-wrapper > a.d-block {
+  display: block !important;
+  width: 100%;
+  height: 100%;
 }
 
 .catalogue-img {
   width: 100%;
-  height: 220px;
+  height: 260px !important;  /* !important ensures no override from Bootstrap or inline */
   object-fit: cover;
+  object-position: center center;
+  background-color: #f5f2ec;
   display: block;
   transition: transform 0.4s ease;
 }
+
+
 
 .catalogue-card:hover .catalogue-img {
   transform: scale(1.04);
