@@ -22,7 +22,7 @@ const productsData = {
 </ul>
 <h5 class="fw-bold mt-4 mb-2 text-dark">Applications:</h5>
 <p>Moringa powder is used by nutraceutical brands, food manufacturers, smoothie companies, baby food producers, cosmetic formulators, and herbal supplement manufacturers worldwide. It blends seamlessly into protein shakes, health beverages, green capsules, soups, and baked goods.</p>`,
-        "images": ["images/Moringa-Leaf-Powder.jpg", "images/product-thumb-4.png"],
+        "images": ["images/Moringa-Leaf-Powder.jpg", "images/product-thumb-5.png"],
         "category": "Immunity & Vitality | Bestseller | Export Ready",
         "sku": "AYU-MOR-001",
         "origin": "Tamil Nadu, India",
